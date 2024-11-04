@@ -1,9 +1,13 @@
 from Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
 
 
+from menu_leitor import gerenciar_leitores
+from Emprestimos import *
+import sqlite3
+
 def menu():
     while True:
-        print("\nMenu da Biblioteca")
+        print("\n   Menu da Biblioteca  ")
         print("1. Gerir Livros")
         print("2. Gerir Leitores")
         print("3. Gerir Funcionários")
@@ -14,8 +18,9 @@ def menu():
 
         if opcao == '1':
             gerenciar_livros()
+            conexao()
         elif opcao == '2':
-            gerenciar_leitores()
+            gerenciar_leitores()  # Chama o menu de leitores
         elif opcao == '3':
             gerenciar_funcionarios()
         elif opcao == '4':
@@ -29,15 +34,6 @@ def menu():
 def gerenciar_livros():
     print("\nGerenciar Livros")
     # Adicione funções para CRUD de livros aqui
-    # Exemplo:
-    # criar_livro()
-    # ler_livros()
-    # atualizar_livro()
-    # deletar_livro()
-
-def gerenciar_leitores():
-    print("\nGerenciar Leitores")
-    # Adicione funções para CRUD de leitores aqui
 
 def gerenciar_funcionarios():
     criar_tabela_funcionarios()  # Certifique-se de que a tabela existe
@@ -77,7 +73,8 @@ def gerenciar_funcionarios():
 
 def gerenciar_emprestimos():
     print("\nGerenciar Empréstimos")
-    # Adicione funções para CRUD de empréstimos aqui
+
+   
 
 # Inicia o menu
 menu()
