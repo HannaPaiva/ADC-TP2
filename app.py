@@ -4,7 +4,7 @@ import sqlite3
 
 def conexao():
     try:
-        conexao = sqlite3.connect('base_de_dados.db')
+        conexao = sqlite3.connect('base_de_dados')
         print("Conexão realizada com sucesso!")
         return conexao
     except sqlite3.Error as erro:
@@ -25,6 +25,7 @@ def menu():
 
         if opcao == '1':
             gerenciar_livros()
+            conexao()
         elif opcao == '2':
             gerenciar_leitores()
         elif opcao == '3':
