@@ -1,5 +1,3 @@
-from menu_leitor import gerenciar_leitores
-from Emprestimos import *
 import sqlite3
 
 def menu():
