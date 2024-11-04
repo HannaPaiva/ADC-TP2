@@ -1,4 +1,4 @@
-from Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
+from Controller.Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
 
 
 from menu_leitor import gerenciar_leitores
