@@ -1,3 +1,5 @@
+from menu_leitor import gerenciar_leitores
+
 def menu():
     while True:
         print("\nMenu da Biblioteca")
@@ -12,7 +14,7 @@ def menu():
         if opcao == '1':
             gerenciar_livros()
         elif opcao == '2':
-            gerenciar_leitores()
+            gerenciar_leitores()  # Chama o menu de leitores
         elif opcao == '3':
             gerenciar_funcionarios()
         elif opcao == '4':
@@ -26,15 +28,6 @@ def menu():
 def gerenciar_livros():
     print("\nGerenciar Livros")
     # Adicione funções para CRUD de livros aqui
-    # Exemplo:
-    # criar_livro()
-    # ler_livros()
-    # atualizar_livro()
-    # deletar_livro()
-
-def gerenciar_leitores():
-    print("\nGerenciar Leitores")
-    # Adicione funções para CRUD de leitores aqui
 
 def gerenciar_funcionarios():
     print("\nGerenciar Funcionários")
