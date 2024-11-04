@@ -1,3 +1,4 @@
+from Livros import *
 def menu():
     while True:
         print("\nMenu da Biblioteca")
@@ -25,8 +26,7 @@ def menu():
 
 def gerenciar_livros():
     print("\nGerenciar Livros")
-    # Adicione funções para CRUD de livros aqui
-    # Exemplo:
+    
     # criar_livro()
     # ler_livros()
     # atualizar_livro()
