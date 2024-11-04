@@ -1,4 +1,4 @@
-from Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario
+from Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
 
 
 def menu():
@@ -67,7 +67,9 @@ def gerenciar_funcionarios():
             atualizar_funcionario(id, nome, cargo)
             print("Funcionário atualizado com sucesso!")
         elif opcao == '4':
-                   print("4. Deletar Funcionário")
+            id = int(input("Digite o ID do funcionário que deseja deletar: "))
+            deletar_funcionario(id)
+            print("Funcionário deletado com sucesso!")
         elif opcao == '5':
             break
         else:
