@@ -57,4 +57,14 @@ def atualizar_leitor(numero_leitor, nome=None, morada=None, telefone=None, nif=N
         print("Nenhum campo para atualizar.")
     
     fechar_conexao(conexao)
-
+    
+def deletar_leitor(numero_leitor):
+    conexao = criar_conexao()
+    cursor = conexao.cursor()
+    try:
+        cursor.execute("DELETE FROM Leitores WHERE numero_leitor = ?", (numero_leitor,))
+        conexao.commit()
+        print("Leitor deletado com sucesso.")
+    except sqlite3.Error as e:
+        print(f"Erro ao deletar leitor: {e}")
+    fechar_conexao(conexao)
