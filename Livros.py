@@ -24,9 +24,18 @@ def listar_livros_id():
     return livros
 
 # Função que adiciona um novo livro à base de dados
-def adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao):
-    # A Fazer
-    print("Por desenvolver...")
+def adicionar_livro():
+    isbn = input("ISBN: ")
+    titulo = input("Título: ")
+    autor = input("Autor: ")
+    categoria = input("Categoria: ")
+    ano_publicacao = input("Ano de publicação: ")
+    conn = conexao()
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO Livros (isbn, titulo, autor, categoria, ano_publicacao) VALUES(?, ?, ?, ?, ?)',(isbn,titulo,autor,categoria,ano_publicacao,))
+    livros = cursor.fetchall()
+    conn.close()
+    return livros
 
 # Função que atualiza os dados de um livro com base no ISBN fornecido
 def atualizar_livro(isbn):
@@ -42,3 +51,4 @@ def apagar_livro(isbn):
 
 listar_livros()
 listar_livros_id()
+adicionar_livro()
