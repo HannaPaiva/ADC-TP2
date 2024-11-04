@@ -1,7 +1,7 @@
 import sqlite3
 # from app import conexao
 def conexao():
-    conn = sqlite3.connect('base_de_dados.db')
+    conn = sqlite3.connect('base_de_dados')
     return conn
 
 # Função que lista todos os livros na tabela Livros
@@ -14,9 +14,14 @@ def listar_livros():
     return livros
 
 # Função que lista o livro desejado através do ISBN
-def listar_livros_id(isbn):
-    # A Fazer
-    print("Por desenvolver...")
+def listar_livros_id():
+    isbn = input("Insira o ISBN do livro que deseja procurar: ")
+    conn = conexao()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM Livros WHERE isbn = ?',(isbn,))
+    livros = cursor.fetchall()
+    conn.close()
+    return livros
 
 # Função que adiciona um novo livro à base de dados
 def adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao):
@@ -36,3 +41,4 @@ def apagar_livro(isbn):
 
 
 listar_livros()
+listar_livros_id()
