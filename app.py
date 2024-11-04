@@ -56,20 +56,11 @@ def gerenciar_funcionarios():
             for func in funcionarios:
                 print(f"ID: {func[0]}, Nome: {func[1]}, Cargo: {func[2]}")
         elif opcao == '2':
-            nome = input("Digite o nome do funcionário: ")
-            cargo = input("Digite o cargo do funcionário: ")
-            adicionar_funcionario(nome, cargo)
-            print("Funcionário adicionado com sucesso!")
+                    print("2. Adicionação Funcionário")
         elif opcao == '3':
-            id = int(input("Digite o ID do funcionário que deseja atualizar: "))
-            nome = input("Digite o novo nome do funcionário: ")
-            cargo = input("Digite o novo cargo do funcionário: ")
-            atualizar_funcionario(id, nome, cargo)
-            print("Funcionário atualizado com sucesso!")
+                   print("3. Atualização Funcionário")
         elif opcao == '4':
-            id = int(input("Digite o ID do funcionário que deseja deletar: "))
-            deletar_funcionario(id)
-            print("Funcionário deletado com sucesso!")
+                   print("4. Deletar Funcionário")
         elif opcao == '5':
             break
         else:
