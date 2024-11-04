@@ -1,6 +1,20 @@
+from Emprestimos import *
+
+import sqlite3
+
+def conexao():
+    try:
+        conexao = sqlite3.connect('base_de_dados.db')
+        print("Conexão realizada com sucesso!")
+        return conexao
+    except sqlite3.Error as erro:
+        print("Erro ao conectar ao banco de dados:", erro)
+        return None
+
+
 def menu():
     while True:
-        print("\nMenu da Biblioteca")
+        print("\n   Menu da Biblioteca  ")
         print("1. Gerir Livros")
         print("2. Gerir Leitores")
         print("3. Gerir Funcionários")
@@ -42,7 +56,8 @@ def gerenciar_funcionarios():
 
 def gerenciar_emprestimos():
     print("\nGerenciar Empréstimos")
-    # Adicione funções para CRUD de empréstimos aqui
+
+   
 
 # Inicia o menu
 menu()
