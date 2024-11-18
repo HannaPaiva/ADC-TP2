@@ -1,4 +1,4 @@
-from Controller.Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
+from Controller.Funcionarios import listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
 
 from menu_livro import gerenciar_livros
 from menu_leitor import gerenciar_leitores
@@ -33,7 +33,6 @@ def menu():
             print("Opção inválida! Tente novamente.")
 
 def gerenciar_funcionarios():
-    criar_tabela_funcionarios()  # Certifique-se de que a tabela existe
     while True:
         print("\nGerenciar Funcionários")
         print("1. Listar Funcionários")
