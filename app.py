@@ -2,7 +2,7 @@ from Controller.Funcionarios import criar_tabela_funcionarios, listar_funcionari
 
 
 from menu_leitor import gerenciar_leitores
-from Emprestimos import *
+from menu_emprestimos import gerenciar_emprestimos
 import sqlite3
 
 def menu():
@@ -69,11 +69,6 @@ def gerenciar_funcionarios():
             break
         else:
             print("Opção inválida! Tente novamente.")
-
-def gerenciar_emprestimos():
-    print("\nGerenciar Empréstimos")
-
-   
 
 # Inicia o menu
 menu()
