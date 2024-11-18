@@ -1,5 +1,5 @@
 from menu_leitor import gerenciar_leitores
-from Emprestimos import *
+from menu_emprestimos import gerenciar_emprestimos
 import sqlite3
 
 def menu():
@@ -34,11 +34,6 @@ def gerenciar_livros():
 def gerenciar_funcionarios():
     print("\nGerenciar Funcionários")
     # Adicione funções para CRUD de funcionários aqui
-
-def gerenciar_emprestimos():
-    print("\nGerenciar Empréstimos")
-
-   
 
 # Inicia o menu
 menu()
