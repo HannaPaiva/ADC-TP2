@@ -17,3 +17,11 @@ def adicionar_emprestimo(livro_isbn, numero_leitor, id_funcionario, data_emprest
     fechar_conexao(conexao)
 
 
+# Função para listar todos os empréstimos
+def listar_emprestimos():
+    conexao = criar_conexao()
+    cursor = conexao.cursor()
+    cursor.execute("SELECT * FROM Emprestimos")
+    emprestimos = cursor.fetchall()
+    fechar_conexao(conexao)
+    return emprestimos
