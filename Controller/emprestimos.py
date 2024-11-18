@@ -25,3 +25,41 @@ def listar_emprestimos():
     emprestimos = cursor.fetchall()
     fechar_conexao(conexao)
     return emprestimos
+
+# Função para atualizar um empréstimo
+def atualizar_emprestimo(id_emprestimo, livro_isbn=None, numero_leitor=None, id_funcionario=None, 
+                         data_emprestimo=None, data_devolucao=None):
+    conexao = criar_conexao()
+    cursor = conexao.cursor()
+    campos = []
+    valores = []
+
+    if livro_isbn:
+        campos.append("livro_isbn = ?")
+        valores.append(livro_isbn)
+    if numero_leitor:
+        campos.append("numero_leitor = ?")
+        valores.append(numero_leitor)
+    if id_funcionario:
+        campos.append("id_funcionario = ?")
+        valores.append(id_funcionario)
+    if data_emprestimo:
+        campos.append("data_emprestimo = ?")
+        valores.append(data_emprestimo)
+    if data_devolucao:
+        campos.append("data_devolucao = ?")
+        valores.append(data_devolucao)
+
+    if campos:
+        valores.append(id_emprestimo)
+        sql = f"UPDATE Emprestimos SET {', '.join(campos)} WHERE id_emprestimo = ?"
+        try:
+            cursor.execute(sql, valores)
+            conexao.commit()
+            print("Empréstimo atualizado com sucesso.")
+        except sqlite3.Error as e:
+            print(f"Erro ao atualizar empréstimo: {e}")
+    else:
+        print("Nenhum campo para atualizar.")
+    
+    fechar_conexao(conexao)
