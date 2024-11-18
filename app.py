@@ -15,7 +15,6 @@ def menu():
 
         if opcao == '1':
             gerenciar_livros()
-            conexao()
         elif opcao == '2':
             gerenciar_leitores()  # Chama o menu de leitores
         elif opcao == '3':
