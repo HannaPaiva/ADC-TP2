@@ -3,7 +3,9 @@ from Controller.Funcionarios import criar_tabela_funcionarios, listar_funcionari
 from menu_livro import gerenciar_livros
 from menu_leitor import gerenciar_leitores
 from menu_emprestimos import gerenciar_emprestimos
-import sqlite3
+from menu_funcionarios import gerenciar_funcionarios
+from menu_funcionarios import gerenciar_funcionarios
+
 
 def menu():
     while True:
@@ -19,7 +21,7 @@ def menu():
         if opcao == '1':
             gerenciar_livros()
         elif opcao == '2':
-            gerenciar_leitores()  # Chama o menu de leitores
+            gerenciar_leitores()
         elif opcao == '3':
             gerenciar_funcionarios()
         elif opcao == '4':
