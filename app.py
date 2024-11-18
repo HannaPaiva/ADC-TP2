@@ -1,6 +1,6 @@
 from Controller.Funcionarios import criar_tabela_funcionarios, listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
 
-
+from menu_livro import gerenciar_livros
 from menu_leitor import gerenciar_leitores
 from menu_emprestimos import gerenciar_emprestimos
 import sqlite3
@@ -29,10 +29,6 @@ def menu():
             break
         else:
             print("Opção inválida! Tente novamente.")
-
-def gerenciar_livros():
-    print("\nGerenciar Livros")
-    # Adicione funções para CRUD de livros aqui
 
 def gerenciar_funcionarios():
     criar_tabela_funcionarios()  # Certifique-se de que a tabela existe
