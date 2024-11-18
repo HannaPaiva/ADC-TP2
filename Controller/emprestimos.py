@@ -63,3 +63,16 @@ def atualizar_emprestimo(id_emprestimo, livro_isbn=None, numero_leitor=None, id_
         print("Nenhum campo para atualizar.")
     
     fechar_conexao(conexao)
+
+
+# Função para deletar um empréstimo
+def deletar_emprestimo(id_emprestimo):
+    conexao = criar_conexao()
+    cursor = conexao.cursor()
+    try:
+        cursor.execute("DELETE FROM Emprestimos WHERE id_emprestimo = ?", (id_emprestimo,))
+        conexao.commit()
+        print("Empréstimo deletado com sucesso.")
+    except sqlite3.Error as e:
+        print(f"Erro ao deletar empréstimo: {e}")
+    fechar_conexao(conexao)
