@@ -1,53 +1,64 @@
 import sqlite3
+from bd_connector import criar_conexao, fechar_conexao
 
-# Função para conectar ao banco de dados
-def conectar():
-    conn = sqlite3.connect('base_de_dados.db')
-    return conn
-
-# Função para criar a tabela de funcionários, se não existir
-def criar_tabela_funcionarios():
-    conn = conectar()
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS funcionarios (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-            cargo TEXT NOT NULL
-        )
-    ''')
-    conn.commit()
-    conn.close()
 
 # Função para listar todos os funcionários
 def listar_funcionarios():
-    conn = conectar()
+    conn = criar_conexao()
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM funcionarios')
     funcionarios = cursor.fetchall()
-    conn.close()
+    fechar_conexao(conn)
     return funcionarios
 
 # Função para adicionar um novo funcionário
-def adicionar_funcionario(nome, cargo):
-    conn = conectar()
+def adicionar_funcionario(nome, morada, telefone, nif, email):
+    conn = criar_conexao()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO funcionarios (nome, cargo) VALUES (?, ?)', (nome, cargo))
+    cursor.execute('''
+        INSERT INTO funcionarios (nome, morada, telefone, nif, email)
+        VALUES (?, ?, ?, ?, ?)
+    ''', (nome, morada, telefone, nif, email))
     conn.commit()
-    conn.close()
+    fechar_conexao(conn)
 
 # Função para atualizar um funcionário
-def atualizar_funcionario(id, nome, cargo):
-    conn = conectar()
+def atualizar_funcionario(id_funcionario, nome=None, morada=None, telefone=None, nif=None, email=None):
+    conn = criar_conexao()
     cursor = conn.cursor()
-    cursor.execute('UPDATE funcionarios SET nome = ?, cargo = ? WHERE id = ?', (nome, cargo, id))
-    conn.commit()
-    conn.close()
+    campos = []
+    valores = []
+
+    if nome:
+        campos.append("nome = ?")
+        valores.append(nome)
+    if morada:
+        campos.append("morada = ?")
+        valores.append(morada)
+    if telefone:
+        campos.append("telefone = ?")
+        valores.append(telefone)
+    if nif:
+        campos.append("nif = ?")
+        valores.append(nif)
+    if email:
+        campos.append("email = ?")
+        valores.append(email)
+
+    if campos:
+        valores.append(id_funcionario)
+        sql = f"UPDATE funcionarios SET {', '.join(campos)} WHERE id_funcionario = ?"
+        cursor.execute(sql, valores)
+        conn.commit()
+    else:
+        print("Nenhum campo para atualizar.")
+    
+    fechar_conexao(conn)
 
 # Função para deletar um funcionário
-def deletar_funcionario(id):
-    conn = conectar()
+def deletar_funcionario(id_funcionario):
+    conn = criar_conexao()
     cursor = conn.cursor()
-    cursor.execute('DELETE FROM funcionarios WHERE id = ?', (id,))
+    cursor.execute('DELETE FROM funcionarios WHERE id_funcionario = ?', (id_funcionario,))
     conn.commit()
-    conn.close()
+    fechar_conexao(conn)

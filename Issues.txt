@@ -1,0 +1,10 @@
+Erros a corrigir:
+
+Funcionarios:
+
+Quando coloco outros id's q não existem para apagar, diz q apagar
+com sucesso mesmo q n exista esse id
+
+Se eu colocar letras em vez de numeros, dá erro mesmo
+
+Deixa atualizar coisas de id's q n existem, ou seja, n atualiza nada
