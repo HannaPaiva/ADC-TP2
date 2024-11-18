@@ -20,6 +20,7 @@ def listar_livros_id():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM Livros WHERE isbn = ?;',(isbn,))
     livros = cursor.fetchall()
+    conn.commit()
     conn.close()
     return livros
 
@@ -32,8 +33,9 @@ def adicionar_livro():
     ano_publicacao = input("Ano de publicação: ")
     conn = conexao()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO Livros (isbn, titulo, autor, categoria, ano_publicacao) VALUES(?, ?, ?, ?, ?);',(isbn,titulo,autor,categoria,ano_publicacao,))
+    cursor.execute('INSERT INTO Livros (isbn, titulo, autor, categoria, ano_publicacao) VALUES(?, ?, ?, ?, ?)',(isbn,titulo,autor,categoria,ano_publicacao,))
     livros = cursor.fetchall()
+    conn.commit()
     conn.close()
     return livros
 
@@ -46,8 +48,9 @@ def atualizar_livro():
     ano_publicacao = input("Ano de publicação: ")
     conn = conexao()
     cursor = conn.cursor()
-    cursor.execute('UPDATE Livros SET titulo='', autor='', categoria='', ano_publicacao=0 WHERE isbn=?;', (titulo,autor,categoria,ano_publicacao,isbn,))
+    cursor.execute('UPDATE Livros SET titulo='', autor='', categoria='', ano_publicacao=0 WHERE isbn=?', (titulo,autor,categoria,ano_publicacao,isbn,))
     livros = cursor.fetchall()
+    conn.commit()
     conn.close()
     return livros
 
@@ -58,5 +61,8 @@ def apagar_livro():
     cursor = conn.cursor()
     cursor.execute('DELETE FROM Livros WHERE isbn=?', (isbn,))
     livros = cursor.fetchall()
+    conn.commit()
     conn.close()
     return livros
+
+listar_livros()

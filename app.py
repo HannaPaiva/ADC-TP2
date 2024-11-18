@@ -29,6 +29,22 @@ def menu():
 def gerenciar_livros():
     print("\nGerenciar Livros")
     # Adicione funções para CRUD de livros aqui
+    print("1- Mostrar todos os Livros")
+    print("2- Procurar Livro por ISBN")
+    print("3- Inserir Livro")
+    print("4- Atualizar Livro")
+    print("5- Apagar Livro")
+    opcao = input("Opção: ")
+    if opcao == '1':
+        listar_livros()
+    elif opcao == '2':
+        listar_livros_id()
+    elif opcao == '3':
+        adicionar_livros()
+    elif opcao == '4':
+        atualizar_livros()
+    elif opcao == '5':
+        apagar_livros()
 
 def gerenciar_funcionarios():
     print("\nGerenciar Funcionários")
