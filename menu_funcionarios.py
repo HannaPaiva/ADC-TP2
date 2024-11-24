@@ -2,7 +2,7 @@ from Controller.Funcionarios import adicionar_funcionario, listar_funcionarios, 
 
 def gerenciar_funcionarios():
     """
-    Interface de gerenciamento de funcionários.
+    Interface de gerenciamento de funcionários
 
     Este método fornece um menu interativo para executar operações de CRUD (Criar, Ler, Atualizar, Deletar)
     e filtrar funcionários, utilizando funções de um módulo controlador.
