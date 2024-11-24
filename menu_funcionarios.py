@@ -1,4 +1,4 @@
-from Controller.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario
+from Controller.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario, filtrar_funcionarios
 
 def gerenciar_funcionarios():
     while True:
@@ -7,7 +7,8 @@ def gerenciar_funcionarios():
         print("2. Listar Funcionários")
         print("3. Atualizar Funcionário")
         print("4. Deletar Funcionário")
-        print("5. Voltar ao Menu Principal")
+        print("5. Filtrar Funcionários")  # Nova opção
+        print("6. Voltar ao Menu Principal")
 
         opcao = input("Escolha uma opção: ")
 
@@ -42,7 +43,31 @@ def gerenciar_funcionarios():
             deletar_funcionario(id_funcionario)
             print("Funcionário deletado com sucesso!")
 
-        elif opcao == '5':
+        elif opcao == '5':  # Nova opção para filtrar
+            print("\nFiltrar Funcionários")
+            print("Deixe o campo em branco para ignorar o critério.")
+            nome = input("Filtrar por Nome: ")
+            morada = input("Filtrar por Morada: ")
+            telefone = input("Filtrar por Telefone: ")
+            nif = input("Filtrar por NIF: ")
+            email = input("Filtrar por Email: ")
+
+            funcionarios = filtrar_funcionarios(
+                nome=nome or None,
+                morada=morada or None,
+                telefone=telefone or None,
+                nif=nif or None,
+                email=email or None
+            )
+
+            print("\nFuncionários Filtrados:")
+            if funcionarios:
+                for funcionario in funcionarios:
+                    print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, Morada: {funcionario[2]}, Telefone: {funcionario[3]}, NIF: {funcionario[4]}, Email: {funcionario[5]}")
+            else:
+                print("Nenhum funcionário encontrado com os critérios fornecidos.")
+
+        elif opcao == '6':
             break
 
         else:

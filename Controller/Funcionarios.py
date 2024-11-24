@@ -62,3 +62,35 @@ def deletar_funcionario(id_funcionario):
     cursor.execute('DELETE FROM funcionarios WHERE id_funcionario = ?', (id_funcionario,))
     conn.commit()
     fechar_conexao(conn)
+
+# Função para filtrar funcionários
+def filtrar_funcionarios(nome=None, morada=None, telefone=None, nif=None, email=None):
+    conn = criar_conexao()
+    cursor = conn.cursor()
+    filtros = []
+    valores = []
+
+    if nome:
+        filtros.append("nome LIKE ?")
+        valores.append(f"%{nome}%")
+    if morada:
+        filtros.append("morada LIKE ?")
+        valores.append(f"%{morada}%")
+    if telefone:
+        filtros.append("telefone LIKE ?")
+        valores.append(f"%{telefone}%")
+    if nif:
+        filtros.append("nif LIKE ?")
+        valores.append(f"%{nif}%")
+    if email:
+        filtros.append("email LIKE ?")
+        valores.append(f"%{email}%")
+
+    sql = "SELECT * FROM funcionarios"
+    if filtros:
+        sql += " WHERE " + " AND ".join(filtros)
+
+    cursor.execute(sql, valores)
+    funcionarios = cursor.fetchall()
+    fechar_conexao(conn)
+    return funcionarios
