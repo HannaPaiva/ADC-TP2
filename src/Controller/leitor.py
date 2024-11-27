@@ -1,6 +1,27 @@
 from bd_connector import criar_conexao, fechar_conexao
 
 def adicionar_leitor(nome, morada, telefone, nif, email):
+    """
+    Adiciona um novo leitor ao banco de dados.
+
+    Este método insere um registro na tabela `Leitores` com as informações fornecidas.
+
+    :param nome: Nome completo do leitor.
+    :type nome: str
+    :param morada: Endereço do leitor.
+    :type morada: str
+    :param telefone: Número de telefone do leitor.
+    :type telefone: str
+    :param nif: Número de identificação fiscal do leitor.
+    :type nif: str
+    :param email: Endereço de email do leitor.
+    :type email: str
+
+    :raises sqlite3.Error: Se ocorrer um erro ao inserir o leitor no banco de dados.
+
+    :return: None
+    """
+       
     conexao = criar_conexao()
     cursor = conexao.cursor()
     try:
