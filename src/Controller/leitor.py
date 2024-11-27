@@ -1,27 +1,28 @@
 from bd_connector import criar_conexao, fechar_conexao
+import sqlite3
 
 def adicionar_leitor(nome, morada, telefone, nif, email):
     """
     Adiciona um novo leitor ao banco de dados.
 
-    Este método insere um registro na tabela `Leitores` com as informações fornecidas.
+    Esta função insere um novo registro na tabela `Leitores` do banco de dados
+    com as informações fornecidas pelos parâmetros.
 
     :param nome: Nome completo do leitor.
     :type nome: str
-    :param morada: Endereço do leitor.
+    :param morada: Endereço de residência do leitor.
     :type morada: str
     :param telefone: Número de telefone do leitor.
     :type telefone: str
-    :param nif: Número de identificação fiscal do leitor.
+    :param nif: Número de identificação fiscal (NIF) do leitor.
     :type nif: str
-    :param email: Endereço de email do leitor.
+    :param email: Endereço de e-mail do leitor.
     :type email: str
 
-    :raises sqlite3.Error: Se ocorrer um erro ao inserir o leitor no banco de dados.
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da inserção no banco de dados.
 
     :return: None
     """
-       
     conexao = criar_conexao()
     cursor = conexao.cursor()
     try:
@@ -35,6 +36,17 @@ def adicionar_leitor(nome, morada, telefone, nif, email):
 
 
 def listar_leitores():
+    """
+    Retorna uma lista de todos os leitores no banco de dados.
+
+    Esta função consulta todos os registros na tabela `Leitores` e retorna
+    uma lista com as informações dos leitores.
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a consulta ao banco de dados.
+
+    :return: Lista de tuplas, onde cada tupla representa um leitor.
+    :rtype: list of tuple
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
     cursor.execute("SELECT * FROM Leitores")
@@ -44,6 +56,30 @@ def listar_leitores():
 
 
 def atualizar_leitor(numero_leitor, nome=None, morada=None, telefone=None, nif=None, email=None):
+    """
+    Atualiza as informações de um leitor existente no banco de dados.
+
+    Esta função atualiza os dados de um leitor específico identificado pelo
+    `numero_leitor`. Os parâmetros opcionais permitem a atualização de
+    nome, morada, telefone, nif e email do leitor.
+
+    :param numero_leitor: Número de identificação do leitor a ser atualizado.
+    :type numero_leitor: int
+    :param nome: Novo nome do leitor (opcional).
+    :type nome: str, optional
+    :param morada: Novo endereço do leitor (opcional).
+    :type morada: str, optional
+    :param telefone: Novo número de telefone do leitor (opcional).
+    :type telefone: str, optional
+    :param nif: Novo número de identificação fiscal do leitor (opcional).
+    :type nif: str, optional
+    :param email: Novo endereço de e-mail do leitor (opcional).
+    :type email: str, optional
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da atualização no banco de dados.
+
+    :return: None
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
     campos = []
@@ -80,6 +116,19 @@ def atualizar_leitor(numero_leitor, nome=None, morada=None, telefone=None, nif=N
     fechar_conexao(conexao)
     
 def deletar_leitor(numero_leitor):
+    """
+    Deleta um leitor do banco de dados.
+
+    Esta função remove o registro do leitor identificado pelo `numero_leitor`
+    da tabela `Leitores`.
+
+    :param numero_leitor: Número de identificação do leitor a ser deletado.
+    :type numero_leitor: int
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da exclusão no banco de dados.
+
+    :return: None
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
     try:
