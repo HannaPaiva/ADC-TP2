@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>leitor module &mdash; Biblioteca 0.0.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=282f96c0"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="livros module" href="livros.html" />
+    <link rel="prev" title="emprestimos module" href="emprestimos.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Biblioteca
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="app.html">app module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emprestimos.html">emprestimos module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">leitor module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.adicionar_leitor"><code class="docutils literal notranslate"><span class="pre">adicionar_leitor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.atualizar_leitor"><code class="docutils literal notranslate"><span class="pre">atualizar_leitor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.deletar_leitor"><code class="docutils literal notranslate"><span class="pre">deletar_leitor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.listar_leitores"><code class="docutils literal notranslate"><span class="pre">listar_leitores()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="livros.html">livros module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionarios module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Biblioteca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">leitor module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/leitor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Controller.leitor">
+<span id="leitor-module"></span><h1>leitor module<a class="headerlink" href="#module-Controller.leitor" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Controller.leitor.adicionar_leitor">
+<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">adicionar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.adicionar_leitor" title="Link to this definition"></a></dt>
+<dd><p>Adiciona um novo leitor ao banco de dados.</p>
+<p>Esta função insere um novo registro na tabela <cite>Leitores</cite> do banco de dados
+com as informações fornecidas pelos parâmetros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nome</strong> (<em>str</em>) – Nome completo do leitor.</p></li>
+<li><p><strong>morada</strong> (<em>str</em>) – Endereço de residência do leitor.</p></li>
+<li><p><strong>telefone</strong> (<em>str</em>) – Número de telefone do leitor.</p></li>
+<li><p><strong>nif</strong> (<em>str</em>) – Número de identificação fiscal (NIF) do leitor.</p></li>
+<li><p><strong>email</strong> (<em>str</em>) – Endereço de e-mail do leitor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da inserção no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Controller.leitor.atualizar_leitor">
+<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">atualizar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.atualizar_leitor" title="Link to this definition"></a></dt>
+<dd><p>Atualiza as informações de um leitor existente no banco de dados.</p>
+<p>Esta função atualiza os dados de um leitor específico identificado pelo
+<cite>numero_leitor</cite>. Os parâmetros opcionais permitem a atualização de
+nome, morada, telefone, nif e email do leitor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numero_leitor</strong> (<em>int</em>) – Número de identificação do leitor a ser atualizado.</p></li>
+<li><p><strong>nome</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo nome do leitor (opcional).</p></li>
+<li><p><strong>morada</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo endereço do leitor (opcional).</p></li>
+<li><p><strong>telefone</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo número de telefone do leitor (opcional).</p></li>
+<li><p><strong>nif</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo número de identificação fiscal do leitor (opcional).</p></li>
+<li><p><strong>email</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo endereço de e-mail do leitor (opcional).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da atualização no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Controller.leitor.deletar_leitor">
+<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">deletar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.deletar_leitor" title="Link to this definition"></a></dt>
+<dd><p>Deleta um leitor do banco de dados.</p>
+<p>Esta função remove o registro do leitor identificado pelo <cite>numero_leitor</cite>
+da tabela <cite>Leitores</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>numero_leitor</strong> (<em>int</em>) – Número de identificação do leitor a ser deletado.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da exclusão no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Controller.leitor.listar_leitores">
+<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">listar_leitores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.listar_leitores" title="Link to this definition"></a></dt>
+<dd><p>Retorna uma lista de todos os leitores no banco de dados.</p>
+<p>Esta função consulta todos os registros na tabela <cite>Leitores</cite> e retorna
+uma lista com as informações dos leitores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a consulta ao banco de dados.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lista de tuplas, onde cada tupla representa um leitor.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="emprestimos.html" class="btn btn-neutral float-left" title="emprestimos module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="livros.html" class="btn btn-neutral float-right" title="livros module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, João Cunha.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
