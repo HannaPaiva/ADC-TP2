@@ -1,4 +1,5 @@
 from bd_connector import criar_conexao, fechar_conexao
+from tabulate import tabulate
 import sqlite3
 
 def adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao):
@@ -18,7 +19,10 @@ def listar_livro():
     cursor.execute("SELECT * FROM Livros")
     livros = cursor.fetchall()
     fechar_conexao(conexao)
-    return livros
+
+    headers = ["ISBN", "Título", "Autor", "Categoria", "Ano de Publicação"]
+    table = tabulate(livros, headers, tablefmt="grid")
+    return table
 
 
 def atualizar_livro(isbn, titulo=None, autor=None, categoria=None, ano_publicacao=None):
