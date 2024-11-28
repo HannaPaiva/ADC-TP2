@@ -39,10 +39,7 @@ def gerenciar_funcionarios():
             print("Funcionário adicionado com sucesso!")
 
         elif opcao == '2':
-            funcionarios = listar_funcionarios()
-            print("\nLista de Funcionários:")
-            for funcionario in funcionarios:
-                print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, Morada: {funcionario[2]}, Telefone: {funcionario[3]}, NIF: {funcionario[4]}, Email: {funcionario[5]}")
+           listar_funcionarios()
 
         elif opcao == '3':
             id_funcionario = int(input("ID do funcionário a atualizar: "))

@@ -1,26 +1,16 @@
 import sqlite3
 from bd_connector import criar_conexao, fechar_conexao
+from FilterData.filterOutput import *
 
 
-# Função para listar todos os funcionários
 def listar_funcionarios():
-    """
-    Recupera todos os funcionários da base de dados.
-
-    Esta função executa uma consulta SQL para buscar todos os registros da tabela de funcionários e retorna uma lista
-    com as informações de todos os funcionários cadastrados.
-
-    Retorna:
-        list: Uma lista de tuplas, onde cada tupla contém as informações de um funcionário (ID, nome, morada, telefone, nif, email).
-    """
-    conn = criar_conexao()
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM funcionarios')
-    funcionarios = cursor.fetchall()
-    fechar_conexao(conn)
-    return funcionarios
+    conexao = criar_conexao()
+    query = "SELECT * FROM funcionarios"  
+    dados, headers = executar_query(conexao, query)  # Captura os dados e os headers
+    return exibir_tabela(dados, headers)  # Exibe a tabela formatada
 
 # Função para adicionar um novo funcionário
+
 def adicionar_funcionario(nome, morada, telefone, nif, email):
     """
     Adiciona um novo funcionário à base de dados.
