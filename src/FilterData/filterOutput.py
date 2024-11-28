@@ -19,13 +19,6 @@ def filterDateOutput(date):
         raise ValueError(f"Erro ao processar a data: {e}")
 
 
-
-def table(data):
-    pass
-
-
-import sqlite3
-
 def executar_query(conexao, query):
     """
     Executa uma query e retorna os resultados e os headers das colunas.
