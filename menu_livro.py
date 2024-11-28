@@ -1,8 +1,15 @@
 from Controller.livros import *
 
 def gerenciar_livros():
-    '''Função principal que tem o objetivo de preparar os dados (input) para encapsular as funções adicionar_livro, listar_livro, listar_livro_por_id, atualizar_livro e deletar_livro
-    Contém verificações de erro e assegura o tipo de dado que é enviado'''
+    """
+    Gere cada operação do tipo CRUD que age como uma interface de menu cliente-sistema.
+
+    Esta função serve para gerir as operações das funções principais que são realizadas na base de dados.
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da inserção no banco de dados.
+
+    :return: None
+    """
     while True:
         print("\nGerenciar Livros")
         print("1. Adicionar Livro")
@@ -19,7 +26,7 @@ def gerenciar_livros():
             try:
                 while True:
                     isbn = input("ISBN: ")
-                    if isbn.isdigit() or isbn != None:
+                    if isbn.isdigit():
                         break
                     else:
                         print("ISBN deve ser um número, tente novamente.")
@@ -54,15 +61,19 @@ def gerenciar_livros():
             try:
                 while True:
                     isbn = input("ISBN do livro a procurar: ")
-                    if isbn.isdigit() and isbn != None:
+                    if isbn.isdigit():
                         break
                     else:
-                        print("ISBN inválido ou vazio, tente novamente, o valor deve ser numérico.")
-
+                        print("ISBN inválido! O valor deve ser numérico. Tente novamente.")
+                
+                resultado = listar_livro_por_id(int(isbn))
+                if resultado:
+                    print(resultado)
+                else:
+                    print("Nenhum livro encontrado com o ISBN fornecido.")
+            
             except sqlite3.Error as e:
                 print(f"Erro ao listar o livro especificado: {e}")
-            else:
-                listar_livro_por_id(isbn)
 
         # Atualizar Livros
         elif opcao == '4':

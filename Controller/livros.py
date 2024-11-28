@@ -3,8 +3,27 @@ from tabulate import tabulate
 import sqlite3
 
 def adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao):
-    '''Função que tem como objetivo preparar e executar a query para inserir um livro novo na base de dados, com os valores de input introduzidos que originam de menu_livro.py, opção 1
-    Inclui tratamento de erro'''
+    """
+    Adiciona um novo livro ao banco de dados.
+
+    Esta função insere um novo registro na tabela `Livros` do banco de dados
+    com as informações fornecidas pelos parâmetros.
+
+    :param isbn: ISBN (International Standard Book Number) do livro.
+    :type isbn: int
+    :param titulo: Título do livro.
+    :type titulo: str
+    :param autor: Autor do livro.
+    :type autor: str
+    :param categoria: Categoria do livro.
+    :type categoria: str
+    :param ano_publicacao: Ano de publicação do livro.
+    :type ano_publicacao: int
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da inserção no banco de dados.
+
+    :return: None
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
     try:
@@ -16,8 +35,17 @@ def adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao):
     fechar_conexao(conexao)
 
 def listar_livro():
-    '''Função que tem como objetivo preparar e executar a query para listar todos os livros na base de dados, esta função é chamada através de menu_livro.py, opção 2
-    Inclui tratamento de erros e formatação de output com a biblioteca tabulate [pip install tabulate]'''
+    """
+    Lista um novo livro ao banco de dados.
+
+    Esta função lista todos os registos na tabela `Livros` do banco de dados e 
+    etorna cada registo em formato de tabela.
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da listagem no banco de dados.
+
+    :return: table
+    :type: str
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
     try:
@@ -31,24 +59,60 @@ def listar_livro():
     return table
 
 def listar_livro_por_id(isbn):
-    '''Função que tem como objetivo preparar e executar a query para listar um dado livro na base de dados através do seu ISBN, esta função é chamada através de menu_livro.py, opção 2
-    Inclui tratamento de erros e formatação de output com a biblioteca tabulate [pip install tabulate]'''
+    """
+    Lista um livro em específico do banco de dados.
+
+    Esta função pesquisa um registro na tabela `Livros` do banco de dados
+    com a informação fornecida pelo parâmetro ISBN, que é o identificador do livro.
+
+    Retorna o registro encontrado em formato de tabela.
+
+    :param isbn: ISBN (International Standard Book Number) do livro.
+    :type isbn: int
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da pesquisa no banco de dados.
+
+    :return: str (Tabela formatada) ou None se nenhum livro for encontrado.
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
+    table = None
     try:
-        cursor.execute("SELECT * FROM Livros WHERE ISBN = ?", (isbn))
+        cursor.execute("SELECT * FROM Livros WHERE ISBN = ?", (isbn,))
         livros = cursor.fetchall()
-        fechar_conexao(conexao)
-        headers = ["ISBN", "Título", "Autor", "Categoria", "Ano de Publicação"]
-        table = tabulate(livros, headers, tablefmt="grid")
+
+        if livros:
+            headers = ["ISBN", "Título", "Autor", "Categoria", "Ano de Publicação"]
+            table = tabulate(livros, headers, tablefmt="grid")
     except sqlite3.Error as e:
         print(f"Erro ao listar o livro especificado: {e}")
+    finally:
+        fechar_conexao(conexao)
+
     return table
         
 
 def atualizar_livro(isbn, titulo=None, autor=None, categoria=None, ano_publicacao=None):
-    '''Função que tem como objetivo preparar e executar a query para atualizar um livro com base no ISBN na base de dados, com os valores de input introduzidos que originam de menu_livros.py, opção 3
-    Inclui tratamento de erros'''
+    """
+    Atualiza um livro no banco de dados.
+
+    Esta função atualiza um registro na tabela `Livros` do banco de dados
+    com as informações fornecidas pelos parâmetros.
+
+    :param isbn: ISBN (International Standard Book Number) do livro.
+    :type isbn: int
+    :param titulo: Título do livro.
+    :type titulo: str
+    :param autor: Autor do livro.
+    :type autor: str
+    :param categoria: Categoria do livro.
+    :type categoria: str
+    :param ano_publicacao: Ano de publicação do livro.
+    :type ano_publicacao: int
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da atualização no banco de dados.
+
+    :return: None
+    """
     conexao = criar_conexao()
     cursor = conexao.cursor()
     campos = []
@@ -84,15 +148,37 @@ def atualizar_livro(isbn, titulo=None, autor=None, categoria=None, ano_publicaca
     
     fechar_conexao(conexao)
     
-def deletar_livro(isbn):
-    '''Função que tem como objetivo preparar e executar a query para apagar um livro com base no ISBN na base de dados, com o valor de input introduzidos que originam de menu_livros.py, opção 4
-    Inclui tratamento de erros'''
-    conexao = criar_conexao()
-    cursor = conexao.cursor()
+
+def deletar_livro(isbnInp):
+    """
+    Apaga um livro do banco de dados.
+
+    Esta função apaga um registro na tabela `Livros` do banco de dados
+    com a informação fornecida pelo parâmetro ISBN, que é o identificador do livro.
+
+    :param isbnInp: ISBN (International Standard Book Number) do livro a ser deletado.
+    :type isbnInp: int
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da remoção no banco de dados.
+
+    :return: None
+    """
     try:
-        cursor.execute("DELETE FROM Livros WHERE isbn = ?", (isbn,))
-        conexao.commit()
-        print("Livro deletado com sucesso.")
+        conexao = criar_conexao()
+        cursor = conexao.cursor()
+
+        cursor.execute("SELECT * FROM Livros WHERE isbn = ?", (isbnInp,))
+        livro = cursor.fetchone()
+
+        if livro:
+            cursor.execute("DELETE FROM Livros WHERE isbn = ?", (isbnInp,))
+            conexao.commit()
+            print("Livro deletado com sucesso.")
+        else:
+            print("ISBN não encontrado no banco de dados.")
+
     except sqlite3.Error as e:
-        print(f"Erro ao deletar leitor: {e}")
-    fechar_conexao(conexao)
+        print(f"Erro ao deletar livro: {e}")
+
+    finally:
+        fechar_conexao(conexao)
