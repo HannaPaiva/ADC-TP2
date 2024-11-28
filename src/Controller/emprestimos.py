@@ -18,15 +18,6 @@ def adicionar_emprestimo(livro_isbn, numero_leitor, id_funcionario, data_emprest
     fechar_conexao(conexao)
 
 
-# Função para listar todos os empréstimos
-# def listar_emprestimos():
-#     conexao = criar_conexao()
-#     cursor = conexao.cursor()
-#     cursor.execute("SELECT * FROM Emprestimos")
-#     emprestimos = cursor.fetchall()
-#     fechar_conexao(conexao)
-#     return emprestimos
-
 def listar_emprestimos():
     """
     Lista os empréstimos da base de dados utilizando a estrutura genérica criada.
@@ -38,7 +29,7 @@ def listar_emprestimos():
     - None: Exibe a tabela formatada no terminal.
     """
     conexao = criar_conexao()
-    query = "SELECT * FROM emprestimos"  # Substitua pelo nome real da sua tabela
+    query = "SELECT * FROM emprestimos"  
     dados, headers = executar_query(conexao, query)  # Captura os dados e os headers
     return exibir_tabela(dados, headers)  # Exibe a tabela formatada
 

@@ -25,8 +25,8 @@ def gerenciar_emprestimos():
             adicionar_emprestimo(livro_isbn, numero_leitor, id_funcionario, data_emprestimo, data_devolucao or None)
 
         elif opcao == '2':
-            spaces()
-            emprestimos = listar_emprestimos()
+    
+            listar_emprestimos()
            
     #atualizar
         elif opcao == '3':
