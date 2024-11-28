@@ -1,3 +1,4 @@
+from FilterData.filterOutput import *
 from bd_connector import criar_conexao, fechar_conexao
 import sqlite3
 
@@ -18,13 +19,28 @@ def adicionar_emprestimo(livro_isbn, numero_leitor, id_funcionario, data_emprest
 
 
 # Função para listar todos os empréstimos
+# def listar_emprestimos():
+#     conexao = criar_conexao()
+#     cursor = conexao.cursor()
+#     cursor.execute("SELECT * FROM Emprestimos")
+#     emprestimos = cursor.fetchall()
+#     fechar_conexao(conexao)
+#     return emprestimos
+
 def listar_emprestimos():
+    """
+    Lista os empréstimos da base de dados utilizando a estrutura genérica criada.
+    
+    Parâmetros:
+    - conexao: Objeto de conexão ao banco de dados.
+    
+    Retorna:
+    - None: Exibe a tabela formatada no terminal.
+    """
     conexao = criar_conexao()
-    cursor = conexao.cursor()
-    cursor.execute("SELECT * FROM Emprestimos")
-    emprestimos = cursor.fetchall()
-    fechar_conexao(conexao)
-    return emprestimos
+    query = "SELECT * FROM emprestimos"  # Substitua pelo nome real da sua tabela
+    dados, headers = executar_query(conexao, query)  # Captura os dados e os headers
+    return exibir_tabela(dados, headers)  # Exibe a tabela formatada
 
 # Função para atualizar um empréstimo
 def atualizar_emprestimo(id_emprestimo, livro_isbn=None, numero_leitor=None, id_funcionario=None, 
