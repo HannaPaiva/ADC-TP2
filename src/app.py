@@ -9,12 +9,15 @@ from menu_funcionarios import gerenciar_funcionarios
 
 def menu():
     while True:
-        print("\n   Menu da Biblioteca  ")
-        print("1. Gerir Livros")
-        print("2. Gerir Leitores")
-        print("3. Gerir Funcionários")
-        print("4. Gerir Empréstimos")
-        print("5. Sair")
+        print("\n+-------------------------+")
+        print("|    MENU DA BIBLIOTECA  |")
+        print("+-------------------------+")
+        print("| 1. Gerir Livros        |")
+        print("| 2. Gerir Leitores      |")
+        print("| 3. Gerir Funcionários  |")
+        print("| 4. Gerir Empréstimos   |")
+        print("| 5. Sair                |")
+        print("+-------------------------+")
 
         opcao = input("Escolha uma opção: ")
 
