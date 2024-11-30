@@ -19,13 +19,17 @@ def gerenciar_funcionarios():
 
     """
     while True:
-        print("\nGerenciar Funcionários")
-        print("1. Adicionar Funcionário")
-        print("2. Listar Funcionários")
-        print("3. Atualizar Funcionário")
-        print("4. Deletar Funcionário")
-        print("5. Filtrar Funcionários")  # Nova opção
-        print("6. Voltar ao Menu Principal")
+        print("\n+------------------------------+")
+        print("|      GERENCIAR FUNCIONARIOS     |")
+        print("+------------------------------+")
+        print("| 1. Adicionar funcionário        |")
+        print("| 2. Listar funcionários          |")
+        print("| 3. Atualizar funcionário        |")
+        print("| 4. Deletar funcionário          |")
+        print("| 5. Filtrar Funcionários         |")
+        print("| 6. Voltar ao Menu Principal     |")
+        print("+------------------------------+")
+        
 
         opcao = input("Escolha uma opção: ")
 

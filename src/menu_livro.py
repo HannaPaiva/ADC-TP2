@@ -2,12 +2,16 @@ from Controller.livros import *
 
 def gerenciar_livros():
     while True:
-        print("\nGerenciar Livros")
-        print("1. Adicionar Livro")
-        print("2. Listar Livro")
-        print("3. Atualizar Livro")
-        print("4. Deletar Livro")
-        print("5. Voltar ao Menu Principal")
+
+        print("\n+------------------------------+")
+        print("|      GERENCIAR LIVROS       |")
+        print("+------------------------------+")
+        print("| 1. Adicionar Livro          |")
+        print("| 2. Listar Livro             |")
+        print("| 3. Atualizar Livro          |")
+        print("| 4. Deletar Livro            |")
+        print("| 5. Voltar ao Menu Principal |")
+        print("+------------------------------+")
 
         opcao = input("Escolha uma opção: ")
 

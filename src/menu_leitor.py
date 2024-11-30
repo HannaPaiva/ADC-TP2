@@ -4,12 +4,15 @@ from Controller.leitor import adicionar_leitor, listar_leitores, atualizar_leito
 
 def gerenciar_leitores():
     while True:
-        print("\nGerenciar Leitores")
-        print("1. Adicionar Leitor")
-        print("2. Listar Leitores")
-        print("3. Atualizar Leitor")
-        print("4. Deletar Leitor")
-        print("5. Voltar ao Menu Principal")
+        print("\n+------------------------------+")
+        print("|      GERENCIAR LEITORES      |")
+        print("+------------------------------+")
+        print("| 1. Adicionar Leitor          |")
+        print("| 2. Listar Leitores           |")
+        print("| 3. Atualizar Leitor          |")
+        print("| 4. Deletar Leitor            |")
+        print("| 5. Voltar ao Menu Principal  |")
+        print("+------------------------------+")
 
         opcao = input("Escolha uma opção: ")
 

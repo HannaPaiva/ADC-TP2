@@ -35,7 +35,7 @@ def inputDate(texto):
         except ValueError:
             print("Formato inválido! Por favor, insira a data no formato DD-MM-YYYY.")
 
-
+#Exemplo de uso
 if __name__ == "__main__":
     # Entrada de data
     data = inputDate("Digite uma data no formato DD-MM-YYYY: ")
