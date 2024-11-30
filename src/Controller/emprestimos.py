@@ -87,5 +87,23 @@ def deletar_emprestimo(id_emprestimo):
 
 
 
+def verificarFuncionarioExiste(ID):
+    """
+    Verifica se um funcionário existe na tabela 'Funcionarios'.
+
+    :param ID: ID do funcionário a ser verificado.
+    :type ID: int
+    :return: Retorna True se o funcionário existe, False caso contrário.
+    :rtype: bool
+    """
+    conn = criar_conexao()
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1 FROM Funcionarios WHERE id_funcionario = ?", (ID,))
+        resultado = cursor.fetchone()
+        return resultado is not None
+    finally:
+        fechar_conexao(conn)
+
 
 
