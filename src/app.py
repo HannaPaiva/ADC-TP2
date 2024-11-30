@@ -1,8 +1,8 @@
-from menu_livro import gerenciar_livros
-from menu_leitor import gerenciar_leitores
-from menu_emprestimos import gerenciar_emprestimos
-from menu_funcionarios import gerenciar_funcionarios
-from menu_funcionarios import gerenciar_funcionarios
+from Controller.menu_livro import gerenciar_livros
+from Controller.menu_leitor import gerenciar_leitores
+from Controller.menu_emprestimos import gerenciar_emprestimos
+from Controller.menu_funcionarios import gerenciar_funcionarios
+from Controller.menu_funcionarios import gerenciar_funcionarios
 
 # Define um diretório específico para o __pycache__ neste projeto
 

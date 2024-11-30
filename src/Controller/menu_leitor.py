@@ -1,6 +1,6 @@
 # menu_leitores.py
 
-from Controller.leitor import adicionar_leitor, listar_leitores, atualizar_leitor, deletar_leitor
+from Model.leitor import adicionar_leitor, listar_leitores, atualizar_leitor, deletar_leitor
 
 def gerenciar_leitores():
     while True:

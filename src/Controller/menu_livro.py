@@ -1,4 +1,4 @@
-from Controller.livros import *
+from Model.livros import *
 
 def gerenciar_livros():
     while True:

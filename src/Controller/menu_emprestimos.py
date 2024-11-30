@@ -1,4 +1,4 @@
-from Controller.emprestimos import *
+from Model.emprestimos import *
 from FilterData.filterInput import *
 from FilterData.filterOutput import *
 
