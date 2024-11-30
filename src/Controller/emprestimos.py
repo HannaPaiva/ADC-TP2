@@ -125,3 +125,22 @@ def verificarLeitorExiste(ID):
     finally:
         fechar_conexao(conn)
 
+
+
+def verificarLivroExiste(ISBN):
+    """
+    Verifica se um livro existe na tabela 'Livros'.
+
+    :param ISBN: ISBN do livro a ser verificado.
+    :type ISBN: str
+    :return: Retorna True se o livro existe, False caso contrário.
+    :rtype: bool
+    """
+    conn = criar_conexao()
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1 FROM Livros WHERE isbn = ?", (ISBN,))
+        resultado = cursor.fetchone()
+        return resultado is not None
+    finally:
+        fechar_conexao(conn)
