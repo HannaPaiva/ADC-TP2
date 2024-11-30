@@ -62,7 +62,7 @@ def gerenciar_emprestimos():
             livro_isbn = input("Novo ISBN do livro: ")
             numero_leitor = input("Novo número do leitor: ")
             id_funcionario = input("Novo ID do funcionário: ")
-            data_emprestimo = input("Nova data do empréstimo (YYYY-MM-DD): ")
+            data_emprestimo = None
             data_devolucao = input("Nova data de devolução (YYYY-MM-DD): ")
 
             # Verificar se os valores fornecidos são válidos

@@ -1,6 +1,15 @@
 from Model.livros import *
 
 def gerenciar_livros():
+    """
+    Gere cada operação do tipo CRUD que age como uma interface de menu cliente-sistema.
+
+    Esta função serve para gerir as operações das funções principais que são realizadas na base de dados.
+
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da inserção no banco de dados.
+
+    :return: None
+    """
     while True:
 
         print("\n+------------------------------+")
@@ -15,34 +24,98 @@ def gerenciar_livros():
 
         opcao = input("Escolha uma opção: ")
 
+        # Adicionar Livros
         if opcao == '1':
-            isbn = input("ISBN: ")
-            titulo = input("Titulo do Livro: ")
-            autor = input("Autor do Livro: ")
-            categoria = input("Categoria do Livro: ")
-            ano_publicacao = input("Ano de Publicação do Livro: ")
-            adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao)
+            try:
+                while True:
+                    isbn = input("ISBN: ")
+                    if isbn.isdigit():
+                        break
+                    else:
+                        print("ISBN deve ser um número, tente novamente.")
 
+                titulo = input("Título do Livro: ")
+                autor = input("Autor do Livro: ")
+                categoria = input("Categoria do Livro: ")
+
+                while True:
+                    ano_publicacao = input("Ano de Publicação do Livro (ex: 2023): ")
+                    if ano_publicacao.isdigit() and len(ano_publicacao) == 4:
+                        break
+                    else:
+                        print("Ano de publicação deve conter apenas 4 dígitos numéricos. Tente novamente.")
+            
+            except sqlite3.Error as e:
+                print(f"Erro ao adicionar livro: {e}")
+            else:
+                adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao)
+
+        # Listar Livros
         elif opcao == '2':
-            livros = listar_livro()
-            print("\nLista de Livros:")
-            for livro in livros:
+            try:
+                livros = listar_livro()
+                print("\nLista de Livros:")
                 print(livros)
+            except sqlite3.Error as e:
+                print(f"Erro ao listar livros: {e}")
 
+        # Listar Livro por ISBN
         elif opcao == '3':
-            isbn = int(input("ISBN do livro a atualizar: "))
-            print("Deixe o campo em branco para não atualizar o valor.")
-            titulo = input("Novo titulo do livro: ")
-            autor = input("Novo autor do livro: ")
-            categoria = input("Nova categoria do livro: ")
-            ano_publicacao = input("Novo ano de pulicação do livro: ")
-            atualizar_livro(isbn, titulo or None, autor or None, categoria or None, ano_publicacao or None)
+            try:
+                while True:
+                    isbn = input("ISBN do livro a procurar: ")
+                    if isbn.isdigit():
+                        break
+                    else:
+                        print("ISBN inválido! O valor deve ser numérico. Tente novamente.")
+                
+                resultado = listar_livro_por_id(int(isbn))
+                if resultado:
+                    print(resultado)
+                else:
+                    print("Nenhum livro encontrado com o ISBN fornecido.")
+            
+            except sqlite3.Error as e:
+                print(f"Erro ao listar o livro especificado: {e}")
 
+        # Atualizar Livros
         elif opcao == '4':
-            isbn = int(input("ISBN do livro a deletar: "))
+            try:
+                while True:
+                    isbn = input("ISBN do livro a atualizar: ")
+                    if isbn.isdigit() and isbn != None:
+                        break
+                    else:
+                        print("ISBN inválido ou vazio, tente novamente, o valor deve ser numérico.")
+
+                print("Deixe o campo em branco para não atualizar o valor.")
+                titulo = input("Novo titulo do livro: ")
+                autor = input("Novo autor do livro: ")
+                categoria = input("Nova categoria do livro: ")
+                while True:
+                    ano_publicacao = input("Novo ano de pulicação do livro: ")
+                    if isbn.isdigit() and isbn != None:
+                        break
+                    else:
+                        print("ISBN inválido ou vazio, tente novamente, o valor deve ser numérico.")
+
+            except sqlite3.Error as e:
+                print(f"Erro ao atualizar livro: {e}")
+            else:
+                atualizar_livro(isbn, titulo or None, autor or None, categoria or None, ano_publicacao or None)
+        
+        # Apagar Livros
+        elif opcao == '5':
+            while True:
+                isbn = input("ISBN do livro a deletar: ")
+                if isbn.isdigit() and isbn != None:
+                    break
+                else:
+                    print("ISBN inválido ou vazio, tente novamente, o valor deve ser numérico.")    
             deletar_livro(isbn)
 
-        elif opcao == '5':
+        # Sair
+        elif opcao == '6':
             break
 
         else:
