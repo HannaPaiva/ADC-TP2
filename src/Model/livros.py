@@ -1,5 +1,5 @@
 from bd_connector import criar_conexao, fechar_conexao
-
+import sqlite3
 def adicionar_livro(isbn, titulo, autor, categoria, ano_publicacao):
     conexao = criar_conexao()
     cursor = conexao.cursor()
