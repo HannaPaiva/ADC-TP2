@@ -1,13 +1,21 @@
-from Controller.Funcionarios import listar_funcionarios, adicionar_funcionario, atualizar_funcionario, deletar_funcionario 
-
 from menu_livro import gerenciar_livros
 from menu_leitor import gerenciar_leitores
 from menu_emprestimos import gerenciar_emprestimos
 from menu_funcionarios import gerenciar_funcionarios
 from menu_funcionarios import gerenciar_funcionarios
 
+# Define um diretório específico para o __pycache__ neste projeto
 
 def menu():
+    """
+        Exibe o menu principal do sistema da biblioteca e gerencia a navegação entre
+        diferentes funcionalidades, como a gestão de livros, leitores, funcionários e
+        empréstimos.
+        O menu apresenta uma interface interativa no terminal, permitindo ao utilizador
+        selecionar diferentes opções para gerenciar os recursos da biblioteca. A função
+        permanece em execução até que a opção de saída seja selecionada.
+    """
+
     while True:
         print("\n+-------------------------+")
         print("|    MENU DA BIBLIOTECA  |")
@@ -36,6 +44,6 @@ def menu():
             print("Opção inválida! Tente novamente.")
 
 
-
+#Se o local de execução é a partir do main
 if __name__ == '__main__':
     menu()

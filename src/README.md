@@ -4,4 +4,4 @@ Trabalho realizado no âmbito da disciplina de Ambientes de Desenvolvimento Cola
 
 # setup
 
-pip install flask
+pip install 

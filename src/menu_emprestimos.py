@@ -3,6 +3,14 @@ from FilterData.filterInput import *
 from FilterData.filterOutput import *
 
 def gerenciar_emprestimos():
+    """
+        Gerencia as operações relacionadas com empréstimos na biblioteca.
+        
+        Este menu permite adicionar, listar, atualizar e eliminar empréstimos,
+        além de possibilitar o regresso ao menu principal. Utiliza funcionalidades
+        de validação de entrada e saída para garantir a integridade dos dados.
+        
+    """
     while True:
         print("\n+------------------------------+")
         print("|    GERENCIAR EMPRÉSTIMOS    |")
