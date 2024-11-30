@@ -144,3 +144,32 @@ def verificarLivroExiste(ISBN):
         return resultado is not None
     finally:
         fechar_conexao(conn)
+
+def verificarTabelasVazias():
+    """
+    Verifica se alguma das tabelas ('Funcionarios', 'Leitores', 'Livros') está vazia.
+
+    :return: Retorna uma tupla (achou, tabela). Se alguma tabela estiver vazia,
+             'achou' será True e 'tabela' será o nome da tabela vazia. 
+             Caso todas as tabelas tenham registros, retorna (False, None).
+    :rtype: tuple
+    """
+    conn = criar_conexao()
+    try:
+        cursor = conn.cursor()
+
+        tabelas = {
+            "Funcionarios": "SELECT COUNT(*) FROM Funcionarios",
+            "Leitores": "SELECT COUNT(*) FROM Leitores",
+            "Livros": "SELECT COUNT(*) FROM Livros"
+        }
+
+        for tabela, query in tabelas.items():
+            cursor.execute(query)
+            count = cursor.fetchone()[0]
+            if count == 0:
+                return True, tabela
+
+        return False, None
+    finally:
+        fechar_conexao(conn)
