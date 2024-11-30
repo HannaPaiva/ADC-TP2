@@ -46,7 +46,23 @@ def listar_emprestimos():
     :rtype: None
     """
     conexao = criar_conexao()
-    query = "SELECT * FROM emprestimos"  
+    query = """
+        SELECT 
+            Emprestimos.id_emprestimo,
+            Emprestimos.livro_isbn,
+            Livros.titulo AS titulo_livro,
+            Livros.autor AS autor_livro,
+            Emprestimos.numero_leitor,
+            Leitores.nome AS nome_leitor,
+            Emprestimos.id_funcionario,
+            Funcionarios.nome AS nome_funcionario,
+            Emprestimos.data_emprestimo,
+            Emprestimos.data_devolucao
+        FROM Emprestimos
+        LEFT JOIN Livros ON Emprestimos.livro_isbn = Livros.isbn
+        LEFT JOIN Leitores ON Emprestimos.numero_leitor = Leitores.numero_leitor
+        LEFT JOIN Funcionarios ON Emprestimos.id_funcionario = Funcionarios.id_funcionario
+    """ 
     dados, headers = executar_query(conexao, query)  # Captura os dados e os headers
     return exibir_tabela(dados, headers)  # Exibe a tabela formatada
 
