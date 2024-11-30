@@ -107,3 +107,21 @@ def verificarFuncionarioExiste(ID):
 
 
 
+def verificarLeitorExiste(ID):
+    """
+    Verifica se um leitor existe na tabela 'Leitores'.
+
+    :param ID: ID do leitor a ser verificado.
+    :type ID: int
+    :return: Retorna True se o leitor existe, False caso contrário.
+    :rtype: bool
+    """
+    conn = criar_conexao()
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1 FROM Leitores WHERE numero_leitor = ?", (ID,))
+        resultado = cursor.fetchone()
+        return resultado is not None
+    finally:
+        fechar_conexao(conn)
+
