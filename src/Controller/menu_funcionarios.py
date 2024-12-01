@@ -1,5 +1,6 @@
 from Model.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario, filtrar_funcionarios
 from FilterData.filterInput import *
+from Model.emprestimos import verificarFuncionarioExiste
 
 
 def gerenciar_funcionarios():
@@ -48,7 +49,10 @@ def gerenciar_funcionarios():
            listar_funcionarios()
 
         elif opcao == '3':
-            id_funcionario = int(input("ID do funcionário a atualizar: "))
+            id_funcionario = int(inputInt("ID do funcionário a atualizar: "))
+            if not verificarFuncionarioExiste(id_funcionario):
+                print(f"O funcionário com ID {id_funcionario} não existe. verifique os dados e tente novamente mais tarde.")
+                continue
             print("Deixe o campo em branco para não atualizar o valor.")
             nome = input("Novo nome do funcionário: ")
             morada = input("Nova morada do funcionário: ")
@@ -60,6 +64,9 @@ def gerenciar_funcionarios():
 
         elif opcao == '4':
             id_funcionario = int(input("ID do funcionário a deletar: "))
+            if not verificarFuncionarioExiste(id_funcionario):
+                print(f"O funcionário com ID {id_funcionario} não existe. verifique os dados e tente novamente mais tarde.")
+                continue
             deletar_funcionario(id_funcionario)
             print("Funcionário deletado com sucesso!")
 
