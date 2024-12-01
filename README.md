@@ -12,33 +12,30 @@ A organização das pastas e ficheiros do projeto é a seguinte:
 ```plaintext
 ADC-TP2/
 ├── _pycache_/         # Arquivos gerados automaticamente pelo Python
-├── Controller/        # Contém os menus para gerir os diferentes módulos
-│   ├── menu_emprestimos.py
-│   ├── menu_funcionarios.py
-│   ├── menu_leitor.py
-│   └── menu_livro.py
 ├── docs/              # Documentação gerada usando o Sphinx
 │   ├── conf.py
 │   ├── Makefile
 │   ├── make.bat
 │   ├── *.rst
-├── src/               # Código principal do projeto
-│   ├── Controller/
-│   ├── database/
-│   │   ├── base_de_dados  
-│   │   └── base_de_dados.bd
-│   ├── FilterData/
-│   │   ├── filterInput.py
-│   │   └── filterOutput.py
-│   ├── Model/
-│   │   ├── emprestimos.py
-│   │   ├── Funcionarios.py
-│   │   ├── leitor.py
-│   │   └── livros.py
-│   ├── app.py         # Ponto de entrada principal da aplicação
-│   └── bd_connector.py # Gestão de conexão com a base de dados SQLite
-├── requirements.txt   # Dependências do projeto
-└── README.md          # Este ficheiro
+├── app.py                # Arquivo principal que executa o menu do sistema.
+├── db_connector.py       # Funções de conexão e desconexão com a base de dados.
+├── Issues.txt            # Ficheiro com as issues por resolver.
+├── database/             # Contém os ficheiros de database
+│   ├── base_de_dados     # Ficheiro da base de dados SQlite
+├── FilterData/           # Package usada para filtrar os dados das queries
+│   ├── FilterInput.py    # Verificação de erros de input 
+│   ├── FilterOutput.py   # Transformação de dados para serem apresentados
+├── Model/                # Onde a lógica de CRUD é chamada na base de dados
+│   ├── emprestimos.py    # Operações referentes a CRUD (na BD) relacionadas aos empréstimos 
+│   ├── funcionarios.py   # Operações referentes a CRUD (na BD) relacionadas aos funcionários
+│   ├── leitor.py         # Operações referentes a CRUD (na BD) relacionadas aos leitores
+│   ├── livros.py         # Operações referentes a CRUD (na BD) relacionadas aos livros
+├── Controller/    
+│    ├── menu_emprestimos.py   # Menu para gerenciar empréstimos.
+│    ├── menu_funcionarios.py  # Menu para gerenciar funcionários.
+│    ├── menu_leitor.py        # Menu para gerenciar leitores.
+│    ├── menu_livro.py         # Menu para gerenciar livros.     
+└── README.md                  # Arquivo com instruções gerais sobre o projeto.
 ```
 
 ## Instalação
