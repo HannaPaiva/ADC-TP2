@@ -1,3 +1,9 @@
+"""
+Módulo de Gerenciamento de outputs
+=============================================
+Autor: [Hanna Paiva]
+Data: [01/12/2024]
+"""
 from datetime import datetime
 from tabulate import tabulate
 

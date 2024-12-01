@@ -1,3 +1,9 @@
+"""
+Módulo de Gerenciamento de inputs
+==============================================
+Autor: [Hanna Paiva]
+Data: [01/12/2024]
+"""
 from datetime import datetime
 
 def inputString(texto):

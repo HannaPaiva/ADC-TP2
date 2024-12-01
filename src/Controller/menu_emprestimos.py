@@ -1,3 +1,9 @@
+"""
+Módulo de Gerenciamento de Empréstimos (Menu)
+==============================================
+Autor: [Hanna Paiva]
+Data: [01/12/2024]
+"""
 from Model.emprestimos import *
 from FilterData.filterInput import *
 from FilterData.filterOutput import *

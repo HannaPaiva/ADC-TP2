@@ -21,8 +21,8 @@ Dependências:
 - Validação de funcionários do módulo `Model.emprestimos`.
 - Formatação de saída com `FilterData.filterOutput`.
 
-Autor: [Seu Nome]
-Data: [Data]
+Autor: [Adriano]
+Data: [01/12/2024]
 """
 
 from Model.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario, filtrar_funcionarios

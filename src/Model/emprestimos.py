@@ -1,3 +1,9 @@
+"""
+Módulo de Gerenciamento de Empréstimos
+==============================================
+Autor: [Hanna Paiva]
+Data: [01/12/2024]
+"""
 from FilterData.filterOutput import *
 from bd_connector import criar_conexao, fechar_conexao
 import sqlite3
