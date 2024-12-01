@@ -1,4 +1,6 @@
 from Model.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario, filtrar_funcionarios
+from FilterData.filterInput import *
+
 
 def gerenciar_funcionarios():
     """
@@ -34,11 +36,11 @@ def gerenciar_funcionarios():
         opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
-            nome = input("Nome do funcionário: ")
-            morada = input("Morada do funcionário: ")
-            telefone = input("Telefone do funcionário: ")
-            nif = input("NIF do funcionário: ")
-            email = input("Email do funcionário: ")
+            nome = inputString("Nome do funcionário: ")
+            morada = inputString("Morada do funcionário: ")
+            telefone = inputInt("Telefone do funcionário: ")
+            nif = inputInt("NIF do funcionário: ")
+            email = inputString("Email do funcionário: ")
             adicionar_funcionario(nome, morada, telefone, nif, email)
             print("Funcionário adicionado com sucesso!")
 
