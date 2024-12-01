@@ -50,10 +50,10 @@ cd ADC-TP2
 **Instale as dependências**: Certifique-se de ter o Python 3.8+ instalado. Depois, instale as dependências usando o pip:
 
 ```
-pip install -r requirements.txt
+pip install tabulate
 ```
 
-Configuração da Base de Dados: O projeto utiliza um banco de dados SQLite armazenado no ficheiro base_de_dados.bd. Certifique-se de que o ficheiro está presente na pasta database.
+Configuração da Base de Dados: O projeto utiliza um banco de dados SQLite armazenado no ficheiro base_de_dados. Certifique-se de que o ficheiro está presente na pasta database.
 
 ## Utilização
 Execute o ficheiro principal app.py:
