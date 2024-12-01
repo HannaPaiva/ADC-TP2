@@ -1,6 +1,7 @@
 from Model.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario, filtrar_funcionarios
 from FilterData.filterInput import *
 from Model.emprestimos import verificarFuncionarioExiste
+from tabulate import tabulate
 
 
 def gerenciar_funcionarios():
@@ -70,7 +71,7 @@ def gerenciar_funcionarios():
             deletar_funcionario(id_funcionario)
             print("Funcionário deletado com sucesso!")
 
-        elif opcao == '5':  # Nova opção para filtrar
+        elif opcao == '5':  
             print("\nFiltrar Funcionários")
             print("Deixe o campo em branco para ignorar o critério.")
             nome = input("Filtrar por Nome: ")
@@ -87,10 +88,10 @@ def gerenciar_funcionarios():
                 email=email or None
             )
 
-            print("\nFuncionários Filtrados:")
             if funcionarios:
-                for funcionario in funcionarios:
-                    print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, Morada: {funcionario[2]}, Telefone: {funcionario[3]}, NIF: {funcionario[4]}, Email: {funcionario[5]}")
+                headers = ["ID", "Nome", "Morada", "Telefone", "NIF", "Email"]
+                print("\nFuncionários Filtrados:")
+                print(tabulate(funcionarios, headers=headers, tablefmt="grid"))  # Formata os dados com tabulate
             else:
                 print("Nenhum funcionário encontrado com os critérios fornecidos.")
 
