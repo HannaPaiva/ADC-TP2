@@ -25,7 +25,7 @@ ADC-TP2/
 ├── src/               # Código principal do projeto
 │   ├── Controller/
 │   ├── database/
-│   │   ├── base_de_dados  # Pasta para armazenar a base de dados SQLite
+│   │   ├── base_de_dados  
 │   │   └── base_de_dados.bd
 │   ├── FilterData/
 │   │   ├── filterInput.py
@@ -64,27 +64,22 @@ python src/app.py
 
 Navegue pelo menu interativo para gerir:
 
-Livros
-
-Leitores
-
-Funcionários
-
-Empréstimos
+- Livros
+- Leitores
+- Funcionários
+- Empréstimos
 
 
 ## Funcionalidades
 - Gestão de Livros:
-  - Adicionar, editar e remover livros
-  - Pesquisar livros no catálogo
+  - Adicionar, listar, atualizar e remover livros
 - Gestão de Leitores:
-  - Cadastrar novos leitores
-  - Atualizar informações de leitores
+  - Adicionar, listar, atualizar e remover leitores
 - Gestão de Funcionários:
-  - Gerir informações de funcionários
+  - Adicionar, listar, atualizar e remover funcionarios
+  - Filtrar funcionarios pelos seus campos
 - Gestão de Empréstimos:
-  - Registar novos empréstimos
-  - Controlar devoluções
+  - Adicionar, listar, atualizar e remover empréstimos
  
 # Autores
 
