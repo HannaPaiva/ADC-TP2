@@ -2,6 +2,7 @@ from Model.Funcionarios import adicionar_funcionario, listar_funcionarios, atual
 from FilterData.filterInput import *
 from Model.emprestimos import verificarFuncionarioExiste
 from tabulate import tabulate
+from FilterData.filterOutput import *
 
 
 def gerenciar_funcionarios():
@@ -91,7 +92,7 @@ def gerenciar_funcionarios():
             if funcionarios:
                 headers = ["ID", "Nome", "Morada", "Telefone", "NIF", "Email"]
                 print("\nFuncionários Filtrados:")
-                print(tabulate(funcionarios, headers=headers, tablefmt="grid"))  # Formata os dados com tabulate
+                exibir_tabela(funcionarios, headers)  # Reutiliza a função exibir_tabela para formatar a saída
             else:
                 print("Nenhum funcionário encontrado com os critérios fornecidos.")
 
