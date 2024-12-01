@@ -51,6 +51,7 @@ cd ADC-TP2
 
 ```
 pip install tabulate
+pip install sqlite3
 ```
 
 Configuração da Base de Dados: O projeto utiliza um banco de dados SQLite armazenado no ficheiro base_de_dados. Certifique-se de que o ficheiro está presente na pasta database.
@@ -70,7 +71,7 @@ Navegue pelo menu interativo para gerir:
 - Empréstimos
 
 
-## Funcionalidades
+## Funcionalidades: com filtragens de erro
 - Gestão de Livros:
   - Adicionar, listar, atualizar e remover livros
 - Gestão de Leitores:
