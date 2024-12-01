@@ -37,7 +37,8 @@ ADC-TP2/
 │    ├── menu_livro.py         # Menu para gerenciar livros.     
 └── README.md                  # Arquivo com instruções gerais sobre o projeto.
 ```
-
+Graficamente, da seguinte forma:
+![image](https://github.com/user-attachments/assets/49b03353-8bd5-4a82-ac55-f5b4a9e57ba1)
 ## Instalação
 ### Clone o repositório:
 ```
