@@ -1,22 +1,59 @@
+"""
+Módulo de Gerenciamento de Funcionários (Menu)
+==============================================
+
+Este módulo fornece um menu interativo para gerenciar funcionários,
+permitindo operações de CRUD (Criar, Ler, Atualizar, Deletar) e filtragem.
+
+Funcionalidades principais:
+---------------------------
+1. Adicionar novo funcionário.
+2. Listar todos os funcionários.
+3. Atualizar informações de um funcionário existente.
+4. Remover um funcionário.
+5. Filtrar funcionários com base em critérios específicos.
+6. Sair para o menu principal.
+
+Dependências:
+-------------
+- Funções CRUD e de filtragem do módulo `Model.Funcionarios`.
+- Entrada de dados validada pelo módulo `FilterData.filterInput`.
+- Validação de funcionários do módulo `Model.emprestimos`.
+- Formatação de saída com `FilterData.filterOutput`.
+
+Autor: [Seu Nome]
+Data: [Data]
+"""
+
 from Model.Funcionarios import adicionar_funcionario, listar_funcionarios, atualizar_funcionario, deletar_funcionario, filtrar_funcionarios
+from FilterData.filterInput import inputString, inputInt
+from Model.emprestimos import verificarFuncionarioExiste
+from FilterData.filterOutput import exibir_tabela
 
 def gerenciar_funcionarios():
     """
-    Interface de gerenciamento de funcionários
+    Interface de gerenciamento de funcionários.
 
-    Este método fornece um menu interativo para executar operações de CRUD (Criar, Ler, Atualizar, Deletar)
-    e filtrar funcionários, utilizando funções de um módulo controlador.
+    Este método exibe um menu interativo para que o usuário realize operações sobre os dados de funcionários.
+    As opções incluem adicionar, listar, atualizar, deletar e filtrar funcionários.
 
-    Funcionalidades disponíveis:
-        1. Adicionar funcionário
-        2. Listar funcionários
-        3. Atualizar informações de um funcionário
-        4. Deletar um funcionário
-        5. Filtrar funcionários por critérios
-        6. Voltar ao menu principal
+    O programa solicita entradas do usuário, valida as informações e utiliza funções de outros módulos para
+    manipular os dados armazenados na base de dados.
 
-    O programa solicita entradas do usuário e chama funções adequadas para manipular os dados.
+    Fluxo de execução:
+    ------------------
+    1. O usuário escolhe uma opção do menu.
+    2. O programa chama a função correspondente.
+    3. O menu é exibido novamente até que o usuário escolha sair.
 
+    Exceções tratadas:
+    ------------------
+    - Verificação de existência de funcionários para operações de atualização e deleção.
+    - Campos deixados em branco são ignorados nas atualizações e filtragens.
+
+    Retorno:
+    --------
+    Nenhum. O resultado das operações é exibido diretamente no terminal.
     """
     while True:
         print("\n+------------------------------+")
@@ -29,24 +66,29 @@ def gerenciar_funcionarios():
         print("| 5. Filtrar Funcionários         |")
         print("| 6. Voltar ao Menu Principal     |")
         print("+------------------------------+")
-        
 
         opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
-            nome = input("Nome do funcionário: ")
-            morada = input("Morada do funcionário: ")
-            telefone = input("Telefone do funcionário: ")
-            nif = input("NIF do funcionário: ")
-            email = input("Email do funcionário: ")
+            # Adicionar novo funcionário
+            nome = inputString("Nome do funcionário: ")
+            morada = inputString("Morada do funcionário: ")
+            telefone = inputInt("Telefone do funcionário: ")
+            nif = inputInt("NIF do funcionário: ")
+            email = inputString("Email do funcionário: ")
             adicionar_funcionario(nome, morada, telefone, nif, email)
             print("Funcionário adicionado com sucesso!")
 
         elif opcao == '2':
-           listar_funcionarios()
+            # Listar todos os funcionários
+            listar_funcionarios()
 
         elif opcao == '3':
-            id_funcionario = int(input("ID do funcionário a atualizar: "))
+            # Atualizar informações de um funcionário
+            id_funcionario = inputInt("ID do funcionário a atualizar: ")
+            if not verificarFuncionarioExiste(id_funcionario):
+                print(f"O funcionário com ID {id_funcionario} não existe. Verifique os dados e tente novamente.")
+                continue
             print("Deixe o campo em branco para não atualizar o valor.")
             nome = input("Novo nome do funcionário: ")
             morada = input("Nova morada do funcionário: ")
@@ -57,11 +99,16 @@ def gerenciar_funcionarios():
             print("Funcionário atualizado com sucesso!")
 
         elif opcao == '4':
-            id_funcionario = int(input("ID do funcionário a deletar: "))
+            # Deletar um funcionário
+            id_funcionario = inputInt("ID do funcionário a deletar: ")
+            if not verificarFuncionarioExiste(id_funcionario):
+                print(f"O funcionário com ID {id_funcionario} não existe. Verifique os dados e tente novamente.")
+                continue
             deletar_funcionario(id_funcionario)
             print("Funcionário deletado com sucesso!")
 
-        elif opcao == '5':  # Nova opção para filtrar
+        elif opcao == '5':
+            # Filtrar funcionários por critérios
             print("\nFiltrar Funcionários")
             print("Deixe o campo em branco para ignorar o critério.")
             nome = input("Filtrar por Nome: ")
@@ -78,14 +125,15 @@ def gerenciar_funcionarios():
                 email=email or None
             )
 
-            print("\nFuncionários Filtrados:")
             if funcionarios:
-                for funcionario in funcionarios:
-                    print(f"ID: {funcionario[0]}, Nome: {funcionario[1]}, Morada: {funcionario[2]}, Telefone: {funcionario[3]}, NIF: {funcionario[4]}, Email: {funcionario[5]}")
+                headers = ["ID", "Nome", "Morada", "Telefone", "NIF", "Email"]
+                print("\nFuncionários Filtrados:")
+                exibir_tabela(funcionarios, headers)  # Formata a saída com cabeçalhos
             else:
                 print("Nenhum funcionário encontrado com os critérios fornecidos.")
 
         elif opcao == '6':
+            # Voltar ao menu principal
             break
 
         else:
