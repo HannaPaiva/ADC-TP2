@@ -7,7 +7,7 @@ def listar_funcionarios():
     conexao = criar_conexao()
     query = "SELECT * FROM funcionarios"  
     dados, headers = executar_query(conexao, query)  # Captura os dados e os headers
-    return exibir_tabela(dados, headers)  # Exibe a tabela formatada
+    return exibir_tabela(dados, headers)  # Exibe uma tabela com funcionários
 
 # Função para adicionar um novo funcionário
 
