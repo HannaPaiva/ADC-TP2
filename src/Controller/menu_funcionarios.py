@@ -32,28 +32,20 @@ from FilterData.filterOutput import exibir_tabela
 
 def gerenciar_funcionarios():
     """
-    Interface de gerenciamento de funcionários.
+    Exibe o menu interativo para gerenciamento de funcionários.
 
-    Este método exibe um menu interativo para que o usuário realize operações sobre os dados de funcionários.
-    As opções incluem adicionar, listar, atualizar, deletar e filtrar funcionários.
-
-    O programa solicita entradas do usuário, valida as informações e utiliza funções de outros módulos para
-    manipular os dados armazenados na base de dados.
+    Este método apresenta opções para realizar operações relacionadas aos funcionários,
+    incluindo adicionar, listar, atualizar, deletar e filtrar registros.
 
     Fluxo de execução:
     ------------------
-    1. O usuário escolhe uma opção do menu.
-    2. O programa chama a função correspondente.
-    3. O menu é exibido novamente até que o usuário escolha sair.
+    1. O usuário escolhe uma opção exibida no menu.
+    2. A função correspondente é executada.
+    3. O menu é exibido novamente até que o usuário escolha retornar ao menu principal.
 
-    Exceções tratadas:
-    ------------------
-    - Verificação de existência de funcionários para operações de atualização e deleção.
-    - Campos deixados em branco são ignorados nas atualizações e filtragens.
+    :raises Exception: Tratamento de erros relacionados às operações de funcionários.
 
-    Retorno:
-    --------
-    Nenhum. O resultado das operações é exibido diretamente no terminal.
+    :return: None
     """
     while True:
         print("\n+------------------------------+")

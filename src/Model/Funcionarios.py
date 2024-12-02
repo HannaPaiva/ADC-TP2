@@ -26,16 +26,12 @@ def listar_funcionarios():
     """
     Lista todos os funcionários da base de dados.
 
-    A função executa uma consulta SQL para obter todos os registros da tabela de funcionários
-    e exibe os resultados formatados em uma tabela.
+    Esta função consulta todos os registros na tabela `funcionarios` e exibe os resultados
+    formatados em uma tabela.
 
-    Dependências:
-        - `criar_conexao()`: Para estabelecer a conexão com a base de dados.
-        - `executar_query()`: Para executar a consulta SQL.
-        - `exibir_tabela()`: Para formatar e exibir os resultados.
+    :raises sqlite3.Error: Se ocorrer um erro durante a consulta ao banco de dados.
 
-    Retorna:
-        None: Os dados são exibidos no terminal.
+    :return: None
     """
     conexao = criar_conexao()
     query = "SELECT * FROM funcionarios"  
@@ -46,18 +42,23 @@ def adicionar_funcionario(nome, morada, telefone, nif, email):
     """
     Adiciona um novo funcionário à base de dados.
 
-    Esta função insere um novo registro na tabela de funcionários com as informações fornecidas.
+    Esta função insere um novo registro na tabela `funcionarios` do banco de dados
+    com as informações fornecidas pelos parâmetros.
 
-    Parâmetros:
-        - nome (str): O nome do funcionário.
-        - morada (str): A morada do funcionário.
-        - telefone (str): O telefone do funcionário.
-        - nif (str): O NIF do funcionário.
-        - email (str): O email do funcionário.
+    :param nome: Nome completo do funcionário.
+    :type nome: str
+    :param morada: Endereço de residência do funcionário.
+    :type morada: str
+    :param telefone: Número de telefone do funcionário.
+    :type telefone: str
+    :param nif: Número de identificação fiscal (NIF) do funcionário.
+    :type nif: str
+    :param email: Endereço de e-mail do funcionário.
+    :type email: str
 
-    Dependências:
-        - `criar_conexao()`: Para estabelecer a conexão com a base de dados.
-        - `fechar_conexao()`: Para encerrar a conexão com a base de dados.
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da inserção no banco de dados.
+
+    :return: None
     """
     conn = criar_conexao()
     cursor = conn.cursor()
@@ -70,25 +71,28 @@ def adicionar_funcionario(nome, morada, telefone, nif, email):
 
 def atualizar_funcionario(id_funcionario, nome=None, morada=None, telefone=None, nif=None, email=None):
     """
-    Atualiza as informações de um funcionário na base de dados.
+    Atualiza as informações de um funcionário existente no banco de dados.
 
-    Permite atualizar qualquer um dos campos de um funcionário com base no ID fornecido.
-    Se um campo não for fornecido, ele será ignorado na atualização.
+    Esta função atualiza os dados de um funcionário específico identificado pelo
+    `id_funcionario`. Os parâmetros opcionais permitem a atualização de
+    nome, morada, telefone, nif e email do funcionário.
 
-    Parâmetros:
-        - id_funcionario (int): O ID do funcionário a ser atualizado.
-        - nome (str, opcional): O novo nome do funcionário. (pode ser `None` para não alterar)
-        - morada (str, opcional): A nova morada do funcionário. (pode ser `None` para não alterar)
-        - telefone (str, opcional): O novo telefone do funcionário. (pode ser `None` para não alterar)
-        - nif (str, opcional): O novo NIF do funcionário. (pode ser `None` para não alterar)
-        - email (str, opcional): O novo email do funcionário. (pode ser `None` para não alterar)
+    :param id_funcionario: ID do funcionário a ser atualizado.
+    :type id_funcionario: int
+    :param nome: Novo nome do funcionário (opcional).
+    :type nome: str, optional
+    :param morada: Novo endereço do funcionário (opcional).
+    :type morada: str, optional
+    :param telefone: Novo número de telefone do funcionário (opcional).
+    :type telefone: str, optional
+    :param nif: Novo número de identificação fiscal do funcionário (opcional).
+    :type nif: str, optional
+    :param email: Novo endereço de e-mail do funcionário (opcional).
+    :type email: str, optional
 
-    Exceções:
-        - Nenhuma. Caso não haja campos para atualizar, a função apenas imprime um aviso.
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da atualização no banco de dados.
 
-    Dependências:
-        - `criar_conexao()`: Para estabelecer a conexão com a base de dados.
-        - `fechar_conexao()`: Para encerrar a conexão com a base de dados.
+    :return: None
     """
     conn = criar_conexao()
     cursor = conn.cursor()
@@ -125,14 +129,15 @@ def deletar_funcionario(id_funcionario):
     """
     Remove um funcionário da base de dados.
 
-    Exclui um funcionário da tabela de funcionários com base no ID fornecido.
+    Esta função exclui o registro de um funcionário específico identificado pelo
+    `id_funcionario`.
 
-    Parâmetros:
-        - id_funcionario (int): O ID do funcionário a ser removido.
+    :param id_funcionario: ID do funcionário a ser removido.
+    :type id_funcionario: int
 
-    Dependências:
-        - `criar_conexao()`: Para estabelecer a conexão com a base de dados.
-        - `fechar_conexao()`: Para encerrar a conexão com a base de dados.
+    :raises sqlite3.Error: Se ocorrer um erro durante a execução da exclusão no banco de dados.
+
+    :return: None
     """
     conn = criar_conexao()
     cursor = conn.cursor()
@@ -144,23 +149,24 @@ def filtrar_funcionarios(nome=None, morada=None, telefone=None, nif=None, email=
     """
     Filtra os funcionários com base em critérios fornecidos.
 
-    Busca registros na tabela de funcionários que atendam aos critérios especificados.
+    Esta função busca registros na tabela `funcionarios` que atendam aos critérios especificados.
     Campos que não forem fornecidos serão ignorados no filtro.
 
-    Parâmetros:
-        - nome (str, opcional): Nome a ser filtrado. (pode ser `None` para não filtrar por nome)
-        - morada (str, opcional): Morada a ser filtrada. (pode ser `None` para não filtrar por morada)
-        - telefone (str, opcional): Telefone a ser filtrado. (pode ser `None` para não filtrar por telefone)
-        - nif (str, opcional): NIF a ser filtrado. (pode ser `None` para não filtrar por nif)
-        - email (str, opcional): Email a ser filtrado. (pode ser `None` para não filtrar por email)
+    :param nome: Nome a ser filtrado (opcional).
+    :type nome: str, optional
+    :param morada: Endereço a ser filtrado (opcional).
+    :type morada: str, optional
+    :param telefone: Telefone a ser filtrado (opcional).
+    :type telefone: str, optional
+    :param nif: NIF a ser filtrado (opcional).
+    :type nif: str, optional
+    :param email: E-mail a ser filtrado (opcional).
+    :type email: str, optional
 
-    Retorna:
-        list: Uma lista de tuplas com os funcionários filtrados. Cada tupla contém os campos
-              (ID, nome, morada, telefone, nif, email).
+    :raises sqlite3.Error: Se ocorrer um erro durante a consulta ao banco de dados.
 
-    Dependências:
-        - `criar_conexao()`: Para estabelecer a conexão com a base de dados.
-        - `fechar_conexao()`: Para encerrar a conexão com a base de dados.
+    :return: Lista de tuplas com os funcionários filtrados.
+    :rtype: list of tuple
     """
     conn = criar_conexao()
     cursor = conn.cursor()
