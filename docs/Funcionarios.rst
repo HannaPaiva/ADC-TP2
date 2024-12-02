@@ -1,7 +1,7 @@
 Funcionarios module
 ===================
 
-.. automodule:: Controller.Funcionarios
+.. automodule:: Model.Funcionarios
    :members:
    :undoc-members:
    :show-inheritance:

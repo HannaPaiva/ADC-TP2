@@ -1,7 +1,7 @@
 livros module
 =============
 
-.. automodule:: Controller.livros
+.. automodule:: Model.livros
    :members:
    :undoc-members:
    :show-inheritance:

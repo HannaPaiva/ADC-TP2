@@ -1,7 +1,7 @@
-emprestimos module
+Emprestimos module
 ==================
 
-.. automodule:: Controller.emprestimos
+.. automodule:: Model.emprestimos
    :members:
    :undoc-members:
    :show-inheritance:

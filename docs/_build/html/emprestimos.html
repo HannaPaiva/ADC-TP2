@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>emprestimos module &mdash; Biblioteca 0.0.5 documentation</title>
+  <title>Emprestimos module &mdash; Biblioteca 0.0.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -42,24 +42,35 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Menus:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Componentes:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="app.html">app module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">emprestimos module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.emprestimos.adicionar_emprestimo"><code class="docutils literal notranslate"><span class="pre">adicionar_emprestimo()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.emprestimos.atualizar_emprestimo"><code class="docutils literal notranslate"><span class="pre">atualizar_emprestimo()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.emprestimos.deletar_emprestimo"><code class="docutils literal notranslate"><span class="pre">deletar_emprestimo()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.emprestimos.listar_emprestimos"><code class="docutils literal notranslate"><span class="pre">listar_emprestimos()</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Emprestimos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modulo-de-gerenciamento-de-emprestimos">Módulo de Gerenciamento de Empréstimos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.adicionar_emprestimo"><code class="docutils literal notranslate"><span class="pre">adicionar_emprestimo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.atualizar_emprestimo"><code class="docutils literal notranslate"><span class="pre">atualizar_emprestimo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.deletar_emprestimo"><code class="docutils literal notranslate"><span class="pre">deletar_emprestimo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.listar_emprestimos"><code class="docutils literal notranslate"><span class="pre">listar_emprestimos()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.verificarFuncionarioExiste"><code class="docutils literal notranslate"><span class="pre">verificarFuncionarioExiste()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.verificarLeitorExiste"><code class="docutils literal notranslate"><span class="pre">verificarLeitorExiste()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.verificarLivroExiste"><code class="docutils literal notranslate"><span class="pre">verificarLivroExiste()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.emprestimos.verificarTabelasVazias"><code class="docutils literal notranslate"><span class="pre">verificarTabelasVazias()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="leitor.html">leitor module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="livros.html">livros module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionarios module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leitor.html">Leitores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="livros.html">Livros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionários</a></li>
 </ul>
 
         </div>
@@ -76,7 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">emprestimos module</li>
+      <li class="breadcrumb-item active">Emprestimos module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/emprestimos.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,27 +97,159 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-Controller.emprestimos">
-<span id="emprestimos-module"></span><h1>emprestimos module<a class="headerlink" href="#module-Controller.emprestimos" title="Link to this heading"></a></h1>
+  <section id="module-Model.emprestimos">
+<span id="emprestimos-module"></span><h1>Emprestimos module<a class="headerlink" href="#module-Model.emprestimos" title="Link to this heading"></a></h1>
+<section id="modulo-de-gerenciamento-de-emprestimos">
+<h2>Módulo de Gerenciamento de Empréstimos<a class="headerlink" href="#modulo-de-gerenciamento-de-emprestimos" title="Link to this heading"></a></h2>
+<p>Autor: [Hanna Paiva]
+Data: [01/12/2024]</p>
+</section>
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.emprestimos.adicionar_emprestimo">
-<span class="sig-prename descclassname"><span class="pre">Controller.emprestimos.</span></span><span class="sig-name descname"><span class="pre">adicionar_emprestimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">livro_isbn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_funcionario</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_emprestimo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_devolucao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.emprestimos.adicionar_emprestimo" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.emprestimos.adicionar_emprestimo">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">adicionar_emprestimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">livro_isbn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_funcionario</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_emprestimo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_devolucao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.adicionar_emprestimo" title="Link to this definition"></a></dt>
+<dd><p>Adiciona um novo empréstimo ao banco de dados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>livro_isbn</strong> (<em>str</em>) – ISBN do livro a ser emprestado.</p></li>
+<li><p><strong>numero_leitor</strong> (<em>int</em>) – Número identificador do leitor.</p></li>
+<li><p><strong>id_funcionario</strong> (<em>int</em>) – ID do funcionário responsável pelo empréstimo.</p></li>
+<li><p><strong>data_emprestimo</strong> (<em>str</em>) – Data do empréstimo no formato YYYY-MM-DD.</p></li>
+<li><p><strong>data_devolucao</strong> (<em>str</em><em>, </em><em>optional</em>) – Data prevista para a devolução no formato YYYY-MM-DD, padrão é None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro ao inserir os dados no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.emprestimos.atualizar_emprestimo">
-<span class="sig-prename descclassname"><span class="pre">Controller.emprestimos.</span></span><span class="sig-name descname"><span class="pre">atualizar_emprestimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_emprestimo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livro_isbn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_funcionario</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_emprestimo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_devolucao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.emprestimos.atualizar_emprestimo" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.emprestimos.atualizar_emprestimo">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">atualizar_emprestimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_emprestimo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">livro_isbn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_funcionario</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_emprestimo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_devolucao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.atualizar_emprestimo" title="Link to this definition"></a></dt>
+<dd><p>Atualiza os dados de um empréstimo existente no banco de dados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_emprestimo</strong> (<em>int</em>) – ID do empréstimo a ser atualizado.</p></li>
+<li><p><strong>livro_isbn</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo ISBN do livro, se necessário.</p></li>
+<li><p><strong>numero_leitor</strong> (<em>int</em><em>, </em><em>optional</em>) – Novo número identificador do leitor, se necessário.</p></li>
+<li><p><strong>id_funcionario</strong> (<em>int</em><em>, </em><em>optional</em>) – Novo ID do funcionário, se necessário.</p></li>
+<li><p><strong>data_emprestimo</strong> (<em>str</em><em>, </em><em>optional</em>) – Nova data do empréstimo no formato YYYY-MM-DD, se necessário.</p></li>
+<li><p><strong>data_devolucao</strong> (<em>str</em><em>, </em><em>optional</em>) – Nova data de devolução no formato YYYY-MM-DD, se necessário.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro ao atualizar os dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.emprestimos.deletar_emprestimo">
-<span class="sig-prename descclassname"><span class="pre">Controller.emprestimos.</span></span><span class="sig-name descname"><span class="pre">deletar_emprestimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_emprestimo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.emprestimos.deletar_emprestimo" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.emprestimos.deletar_emprestimo">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">deletar_emprestimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_emprestimo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.deletar_emprestimo" title="Link to this definition"></a></dt>
+<dd><p>Deleta um empréstimo existente no banco de dados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_emprestimo</strong> (<em>int</em>) – ID do empréstimo a ser deletado.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro ao deletar os dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.emprestimos.listar_emprestimos">
-<span class="sig-prename descclassname"><span class="pre">Controller.emprestimos.</span></span><span class="sig-name descname"><span class="pre">listar_emprestimos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.emprestimos.listar_emprestimos" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.emprestimos.listar_emprestimos">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">listar_emprestimos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.listar_emprestimos" title="Link to this definition"></a></dt>
+<dd><p>Lista todos os empréstimos cadastrados no banco de dados.</p>
+<p>Esta função utiliza a função <cite>executar_query</cite> para capturar os dados da tabela
+de empréstimos e exibe os resultados em formato de tabela.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro ao consultar os dados.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None. Os dados são exibidos no terminal.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Model.emprestimos.verificarFuncionarioExiste">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">verificarFuncionarioExiste</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.verificarFuncionarioExiste" title="Link to this definition"></a></dt>
+<dd><p>Verifica se um funcionário existe na tabela ‘Funcionarios’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ID</strong> (<em>int</em>) – ID do funcionário a ser verificado.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Retorna True se o funcionário existe, False caso contrário.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Model.emprestimos.verificarLeitorExiste">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">verificarLeitorExiste</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ID</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.verificarLeitorExiste" title="Link to this definition"></a></dt>
+<dd><p>Verifica se um leitor existe na tabela ‘Leitores’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ID</strong> (<em>int</em>) – ID do leitor a ser verificado.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Retorna True se o leitor existe, False caso contrário.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Model.emprestimos.verificarLivroExiste">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">verificarLivroExiste</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ISBN</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.verificarLivroExiste" title="Link to this definition"></a></dt>
+<dd><p>Verifica se um livro existe na tabela ‘Livros’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ISBN</strong> (<em>str</em>) – ISBN do livro a ser verificado.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Retorna True se o livro existe, False caso contrário.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Model.emprestimos.verificarTabelasVazias">
+<span class="sig-prename descclassname"><span class="pre">Model.emprestimos.</span></span><span class="sig-name descname"><span class="pre">verificarTabelasVazias</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Model.emprestimos.verificarTabelasVazias" title="Link to this definition"></a></dt>
+<dd><p>Verifica se alguma das tabelas (‘Funcionarios’, ‘Leitores’, ‘Livros’) está vazia.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Retorna uma tupla (achou, tabela). Se alguma tabela estiver vazia,
+‘achou’ será True e ‘tabela’ será o nome da tabela vazia. 
+Caso todas as tabelas tenham registros, retorna (False, None).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

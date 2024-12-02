@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="livros module" href="livros.html" />
-    <link rel="prev" title="emprestimos module" href="emprestimos.html" /> 
+    <link rel="prev" title="Emprestimos module" href="emprestimos.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,24 +42,30 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Menus:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Componentes:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="app.html">app module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emprestimos.html">emprestimos module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">leitor module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.adicionar_leitor"><code class="docutils literal notranslate"><span class="pre">adicionar_leitor()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.atualizar_leitor"><code class="docutils literal notranslate"><span class="pre">atualizar_leitor()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.deletar_leitor"><code class="docutils literal notranslate"><span class="pre">deletar_leitor()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.leitor.listar_leitores"><code class="docutils literal notranslate"><span class="pre">listar_leitores()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="emprestimos.html">Emprestimos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Leitores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Model.leitor.adicionar_leitor"><code class="docutils literal notranslate"><span class="pre">adicionar_leitor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.leitor.atualizar_leitor"><code class="docutils literal notranslate"><span class="pre">atualizar_leitor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.leitor.deletar_leitor"><code class="docutils literal notranslate"><span class="pre">deletar_leitor()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.leitor.listar_leitores"><code class="docutils literal notranslate"><span class="pre">listar_leitores()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="livros.html">livros module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionarios module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="livros.html">Livros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionários</a></li>
 </ul>
 
         </div>
@@ -86,11 +92,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-Controller.leitor">
-<span id="leitor-module"></span><h1>leitor module<a class="headerlink" href="#module-Controller.leitor" title="Link to this heading"></a></h1>
+  <section id="module-Model.leitor">
+<span id="leitor-module"></span><h1>leitor module<a class="headerlink" href="#module-Model.leitor" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.leitor.adicionar_leitor">
-<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">adicionar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.adicionar_leitor" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="Model.leitor.adicionar_leitor">
+<span class="sig-prename descclassname"><span class="pre">Model.leitor.</span></span><span class="sig-name descname"><span class="pre">adicionar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.leitor.adicionar_leitor" title="Link to this definition"></a></dt>
 <dd><p>Adiciona um novo leitor ao banco de dados.</p>
 <p>Esta função insere um novo registro na tabela <cite>Leitores</cite> do banco de dados
 com as informações fornecidas pelos parâmetros.</p>
@@ -114,8 +120,8 @@ com as informações fornecidas pelos parâmetros.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.leitor.atualizar_leitor">
-<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">atualizar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.atualizar_leitor" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="Model.leitor.atualizar_leitor">
+<span class="sig-prename descclassname"><span class="pre">Model.leitor.</span></span><span class="sig-name descname"><span class="pre">atualizar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.leitor.atualizar_leitor" title="Link to this definition"></a></dt>
 <dd><p>Atualiza as informações de um leitor existente no banco de dados.</p>
 <p>Esta função atualiza os dados de um leitor específico identificado pelo
 <cite>numero_leitor</cite>. Os parâmetros opcionais permitem a atualização de
@@ -141,8 +147,8 @@ nome, morada, telefone, nif e email do leitor.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.leitor.deletar_leitor">
-<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">deletar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.deletar_leitor" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="Model.leitor.deletar_leitor">
+<span class="sig-prename descclassname"><span class="pre">Model.leitor.</span></span><span class="sig-name descname"><span class="pre">deletar_leitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numero_leitor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.leitor.deletar_leitor" title="Link to this definition"></a></dt>
 <dd><p>Deleta um leitor do banco de dados.</p>
 <p>Esta função remove o registro do leitor identificado pelo <cite>numero_leitor</cite>
 da tabela <cite>Leitores</cite>.</p>
@@ -160,8 +166,8 @@ da tabela <cite>Leitores</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.leitor.listar_leitores">
-<span class="sig-prename descclassname"><span class="pre">Controller.leitor.</span></span><span class="sig-name descname"><span class="pre">listar_leitores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.leitor.listar_leitores" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="Model.leitor.listar_leitores">
+<span class="sig-prename descclassname"><span class="pre">Model.leitor.</span></span><span class="sig-name descname"><span class="pre">listar_leitores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Model.leitor.listar_leitores" title="Link to this definition"></a></dt>
 <dd><p>Retorna uma lista de todos os leitores no banco de dados.</p>
 <p>Esta função consulta todos os registros na tabela <cite>Leitores</cite> e retorna
 uma lista com as informações dos leitores.</p>
@@ -184,7 +190,7 @@ uma lista com as informações dos leitores.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="emprestimos.html" class="btn btn-neutral float-left" title="emprestimos module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="emprestimos.html" class="btn btn-neutral float-left" title="Emprestimos module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="livros.html" class="btn btn-neutral float-right" title="livros module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

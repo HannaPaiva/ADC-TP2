@@ -42,24 +42,31 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Menus:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Componentes:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="app.html">app module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_funcionarios.html">menu_funcionarios module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="emprestimos.html">emprestimos module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="leitor.html">leitor module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">livros module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.livros.adicionar_livro"><code class="docutils literal notranslate"><span class="pre">adicionar_livro()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.livros.atualizar_livro"><code class="docutils literal notranslate"><span class="pre">atualizar_livro()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.livros.deletar_livro"><code class="docutils literal notranslate"><span class="pre">deletar_livro()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Controller.livros.listar_livro"><code class="docutils literal notranslate"><span class="pre">listar_livro()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="emprestimos.html">Emprestimos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leitor.html">Leitores</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Livros</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Model.livros.adicionar_livro"><code class="docutils literal notranslate"><span class="pre">adicionar_livro()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.livros.atualizar_livro"><code class="docutils literal notranslate"><span class="pre">atualizar_livro()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.livros.deletar_livro"><code class="docutils literal notranslate"><span class="pre">deletar_livro()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.livros.listar_livro"><code class="docutils literal notranslate"><span class="pre">listar_livro()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Model.livros.listar_livro_por_id"><code class="docutils literal notranslate"><span class="pre">listar_livro_por_id()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionarios module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionários</a></li>
 </ul>
 
         </div>
@@ -86,27 +93,115 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-Controller.livros">
-<span id="livros-module"></span><h1>livros module<a class="headerlink" href="#module-Controller.livros" title="Link to this heading"></a></h1>
+  <section id="module-Model.livros">
+<span id="livros-module"></span><h1>livros module<a class="headerlink" href="#module-Model.livros" title="Link to this heading"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.livros.adicionar_livro">
-<span class="sig-prename descclassname"><span class="pre">Controller.livros.</span></span><span class="sig-name descname"><span class="pre">adicionar_livro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titulo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ano_publicacao</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.livros.adicionar_livro" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.livros.adicionar_livro">
+<span class="sig-prename descclassname"><span class="pre">Model.livros.</span></span><span class="sig-name descname"><span class="pre">adicionar_livro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titulo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ano_publicacao</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.livros.adicionar_livro" title="Link to this definition"></a></dt>
+<dd><p>Adiciona um novo livro ao banco de dados.</p>
+<p>Esta função insere um novo registro na tabela <cite>Livros</cite> do banco de dados
+com as informações fornecidas pelos parâmetros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isbn</strong> (<em>int</em>) – ISBN (International Standard Book Number) do livro.</p></li>
+<li><p><strong>titulo</strong> (<em>str</em>) – Título do livro.</p></li>
+<li><p><strong>autor</strong> (<em>str</em>) – Autor do livro.</p></li>
+<li><p><strong>categoria</strong> (<em>str</em>) – Categoria do livro.</p></li>
+<li><p><strong>ano_publicacao</strong> (<em>int</em>) – Ano de publicação do livro.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da inserção no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.livros.atualizar_livro">
-<span class="sig-prename descclassname"><span class="pre">Controller.livros.</span></span><span class="sig-name descname"><span class="pre">atualizar_livro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titulo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoria</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ano_publicacao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.livros.atualizar_livro" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.livros.atualizar_livro">
+<span class="sig-prename descclassname"><span class="pre">Model.livros.</span></span><span class="sig-name descname"><span class="pre">atualizar_livro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titulo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categoria</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ano_publicacao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.livros.atualizar_livro" title="Link to this definition"></a></dt>
+<dd><p>Atualiza um livro no banco de dados.</p>
+<p>Esta função atualiza um registro na tabela <cite>Livros</cite> do banco de dados
+com as informações fornecidas pelos parâmetros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isbn</strong> (<em>int</em>) – ISBN (International Standard Book Number) do livro.</p></li>
+<li><p><strong>titulo</strong> (<em>str</em>) – Título do livro.</p></li>
+<li><p><strong>autor</strong> (<em>str</em>) – Autor do livro.</p></li>
+<li><p><strong>categoria</strong> (<em>str</em>) – Categoria do livro.</p></li>
+<li><p><strong>ano_publicacao</strong> (<em>int</em>) – Ano de publicação do livro.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da atualização no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.livros.deletar_livro">
-<span class="sig-prename descclassname"><span class="pre">Controller.livros.</span></span><span class="sig-name descname"><span class="pre">deletar_livro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.livros.deletar_livro" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.livros.deletar_livro">
+<span class="sig-prename descclassname"><span class="pre">Model.livros.</span></span><span class="sig-name descname"><span class="pre">deletar_livro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbnInp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.livros.deletar_livro" title="Link to this definition"></a></dt>
+<dd><p>Apaga um livro do banco de dados.</p>
+<p>Esta função apaga um registro na tabela <cite>Livros</cite> do banco de dados
+com a informação fornecida pelo parâmetro ISBN, que é o identificador do livro.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isbnInp</strong> (<em>int</em>) – ISBN (International Standard Book Number) do livro a ser deletado.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da remoção no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="Controller.livros.listar_livro">
-<span class="sig-prename descclassname"><span class="pre">Controller.livros.</span></span><span class="sig-name descname"><span class="pre">listar_livro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.livros.listar_livro" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Model.livros.listar_livro">
+<span class="sig-prename descclassname"><span class="pre">Model.livros.</span></span><span class="sig-name descname"><span class="pre">listar_livro</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Model.livros.listar_livro" title="Link to this definition"></a></dt>
+<dd><p>Lista um novo livro ao banco de dados.</p>
+<p>Esta função lista todos os registos na tabela <cite>Livros</cite> do banco de dados e 
+etorna cada registo em formato de tabela.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da listagem no banco de dados.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>table</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Model.livros.listar_livro_por_id">
+<span class="sig-prename descclassname"><span class="pre">Model.livros.</span></span><span class="sig-name descname"><span class="pre">listar_livro_por_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isbn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.livros.listar_livro_por_id" title="Link to this definition"></a></dt>
+<dd><p>Lista um livro em específico do banco de dados.</p>
+<p>Esta função pesquisa um registro na tabela <cite>Livros</cite> do banco de dados
+com a informação fornecida pelo parâmetro ISBN, que é o identificador do livro.</p>
+<p>Retorna o registro encontrado em formato de tabela.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isbn</strong> (<em>int</em>) – ISBN (International Standard Book Number) do livro.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da pesquisa no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str (Tabela formatada) ou None se nenhum livro for encontrado.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

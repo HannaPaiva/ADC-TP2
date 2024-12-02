@@ -1,7 +1,7 @@
 menu\_funcionarios module
 =========================
 
-.. automodule:: menu_funcionarios
+.. automodule:: Controller.menu_funcionarios
    :members:
    :undoc-members:
    :show-inheritance:
