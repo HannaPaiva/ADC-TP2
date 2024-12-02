@@ -122,20 +122,23 @@ disponíveis no módulo <cite>bd_connector</cite>. Também utiliza a formataçã
 <dt class="sig sig-object py" id="Model.Funcionarios.adicionar_funcionario">
 <span class="sig-prename descclassname"><span class="pre">Model.Funcionarios.</span></span><span class="sig-name descname"><span class="pre">adicionar_funcionario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.Funcionarios.adicionar_funcionario" title="Link to this definition"></a></dt>
 <dd><p>Adiciona um novo funcionário à base de dados.</p>
-<p>Esta função insere um novo registro na tabela de funcionários com as informações fornecidas.</p>
-<dl class="simple">
-<dt>Parâmetros:</dt><dd><ul class="simple">
-<li><p>nome (str): O nome do funcionário.</p></li>
-<li><p>morada (str): A morada do funcionário.</p></li>
-<li><p>telefone (str): O telefone do funcionário.</p></li>
-<li><p>nif (str): O NIF do funcionário.</p></li>
-<li><p>email (str): O email do funcionário.</p></li>
+<p>Esta função insere um novo registro na tabela <cite>funcionarios</cite> do banco de dados
+com as informações fornecidas pelos parâmetros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nome</strong> (<em>str</em>) – Nome completo do funcionário.</p></li>
+<li><p><strong>morada</strong> (<em>str</em>) – Endereço de residência do funcionário.</p></li>
+<li><p><strong>telefone</strong> (<em>str</em>) – Número de telefone do funcionário.</p></li>
+<li><p><strong>nif</strong> (<em>str</em>) – Número de identificação fiscal (NIF) do funcionário.</p></li>
+<li><p><strong>email</strong> (<em>str</em>) – Endereço de e-mail do funcionário.</p></li>
 </ul>
 </dd>
-<dt>Dependências:</dt><dd><ul class="simple">
-<li><p><cite>criar_conexao()</cite>: Para estabelecer a conexão com a base de dados.</p></li>
-<li><p><cite>fechar_conexao()</cite>: Para encerrar a conexão com a base de dados.</p></li>
-</ul>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da inserção no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -143,27 +146,26 @@ disponíveis no módulo <cite>bd_connector</cite>. Também utiliza a formataçã
 <dl class="py function">
 <dt class="sig sig-object py" id="Model.Funcionarios.atualizar_funcionario">
 <span class="sig-prename descclassname"><span class="pre">Model.Funcionarios.</span></span><span class="sig-name descname"><span class="pre">atualizar_funcionario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_funcionario</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.Funcionarios.atualizar_funcionario" title="Link to this definition"></a></dt>
-<dd><p>Atualiza as informações de um funcionário na base de dados.</p>
-<p>Permite atualizar qualquer um dos campos de um funcionário com base no ID fornecido.
-Se um campo não for fornecido, ele será ignorado na atualização.</p>
-<dl class="simple">
-<dt>Parâmetros:</dt><dd><ul class="simple">
-<li><p>id_funcionario (int): O ID do funcionário a ser atualizado.</p></li>
-<li><p>nome (str, opcional): O novo nome do funcionário. (pode ser <cite>None</cite> para não alterar)</p></li>
-<li><p>morada (str, opcional): A nova morada do funcionário. (pode ser <cite>None</cite> para não alterar)</p></li>
-<li><p>telefone (str, opcional): O novo telefone do funcionário. (pode ser <cite>None</cite> para não alterar)</p></li>
-<li><p>nif (str, opcional): O novo NIF do funcionário. (pode ser <cite>None</cite> para não alterar)</p></li>
-<li><p>email (str, opcional): O novo email do funcionário. (pode ser <cite>None</cite> para não alterar)</p></li>
+<dd><p>Atualiza as informações de um funcionário existente no banco de dados.</p>
+<p>Esta função atualiza os dados de um funcionário específico identificado pelo
+<cite>id_funcionario</cite>. Os parâmetros opcionais permitem a atualização de
+nome, morada, telefone, nif e email do funcionário.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_funcionario</strong> (<em>int</em>) – ID do funcionário a ser atualizado.</p></li>
+<li><p><strong>nome</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo nome do funcionário (opcional).</p></li>
+<li><p><strong>morada</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo endereço do funcionário (opcional).</p></li>
+<li><p><strong>telefone</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo número de telefone do funcionário (opcional).</p></li>
+<li><p><strong>nif</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo número de identificação fiscal do funcionário (opcional).</p></li>
+<li><p><strong>email</strong> (<em>str</em><em>, </em><em>optional</em>) – Novo endereço de e-mail do funcionário (opcional).</p></li>
 </ul>
 </dd>
-<dt>Exceções:</dt><dd><ul class="simple">
-<li><p>Nenhuma. Caso não haja campos para atualizar, a função apenas imprime um aviso.</p></li>
-</ul>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da atualização no banco de dados.</p>
 </dd>
-<dt>Dependências:</dt><dd><ul class="simple">
-<li><p><cite>criar_conexao()</cite>: Para estabelecer a conexão com a base de dados.</p></li>
-<li><p><cite>fechar_conexao()</cite>: Para encerrar a conexão com a base de dados.</p></li>
-</ul>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -172,16 +174,17 @@ Se um campo não for fornecido, ele será ignorado na atualização.</p>
 <dt class="sig sig-object py" id="Model.Funcionarios.deletar_funcionario">
 <span class="sig-prename descclassname"><span class="pre">Model.Funcionarios.</span></span><span class="sig-name descname"><span class="pre">deletar_funcionario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_funcionario</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.Funcionarios.deletar_funcionario" title="Link to this definition"></a></dt>
 <dd><p>Remove um funcionário da base de dados.</p>
-<p>Exclui um funcionário da tabela de funcionários com base no ID fornecido.</p>
-<dl class="simple">
-<dt>Parâmetros:</dt><dd><ul class="simple">
-<li><p>id_funcionario (int): O ID do funcionário a ser removido.</p></li>
-</ul>
+<p>Esta função exclui o registro de um funcionário específico identificado pelo
+<cite>id_funcionario</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_funcionario</strong> (<em>int</em>) – ID do funcionário a ser removido.</p>
 </dd>
-<dt>Dependências:</dt><dd><ul class="simple">
-<li><p><cite>criar_conexao()</cite>: Para estabelecer a conexão com a base de dados.</p></li>
-<li><p><cite>fechar_conexao()</cite>: Para encerrar a conexão com a base de dados.</p></li>
-</ul>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a execução da exclusão no banco de dados.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -190,26 +193,26 @@ Se um campo não for fornecido, ele será ignorado na atualização.</p>
 <dt class="sig sig-object py" id="Model.Funcionarios.filtrar_funcionarios">
 <span class="sig-prename descclassname"><span class="pre">Model.Funcionarios.</span></span><span class="sig-name descname"><span class="pre">filtrar_funcionarios</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nome</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">morada</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">telefone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nif</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Model.Funcionarios.filtrar_funcionarios" title="Link to this definition"></a></dt>
 <dd><p>Filtra os funcionários com base em critérios fornecidos.</p>
-<p>Busca registros na tabela de funcionários que atendam aos critérios especificados.
+<p>Esta função busca registros na tabela <cite>funcionarios</cite> que atendam aos critérios especificados.
 Campos que não forem fornecidos serão ignorados no filtro.</p>
-<dl class="simple">
-<dt>Parâmetros:</dt><dd><ul class="simple">
-<li><p>nome (str, opcional): Nome a ser filtrado. (pode ser <cite>None</cite> para não filtrar por nome)</p></li>
-<li><p>morada (str, opcional): Morada a ser filtrada. (pode ser <cite>None</cite> para não filtrar por morada)</p></li>
-<li><p>telefone (str, opcional): Telefone a ser filtrado. (pode ser <cite>None</cite> para não filtrar por telefone)</p></li>
-<li><p>nif (str, opcional): NIF a ser filtrado. (pode ser <cite>None</cite> para não filtrar por nif)</p></li>
-<li><p>email (str, opcional): Email a ser filtrado. (pode ser <cite>None</cite> para não filtrar por email)</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nome</strong> (<em>str</em><em>, </em><em>optional</em>) – Nome a ser filtrado (opcional).</p></li>
+<li><p><strong>morada</strong> (<em>str</em><em>, </em><em>optional</em>) – Endereço a ser filtrado (opcional).</p></li>
+<li><p><strong>telefone</strong> (<em>str</em><em>, </em><em>optional</em>) – Telefone a ser filtrado (opcional).</p></li>
+<li><p><strong>nif</strong> (<em>str</em><em>, </em><em>optional</em>) – NIF a ser filtrado (opcional).</p></li>
+<li><p><strong>email</strong> (<em>str</em><em>, </em><em>optional</em>) – E-mail a ser filtrado (opcional).</p></li>
 </ul>
 </dd>
-<dt>Retorna:</dt><dd><dl class="simple">
-<dt>list: Uma lista de tuplas com os funcionários filtrados. Cada tupla contém os campos</dt><dd><p>(ID, nome, morada, telefone, nif, email).</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a consulta ao banco de dados.</p>
 </dd>
-</dl>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista de tuplas com os funcionários filtrados.</p>
 </dd>
-<dt>Dependências:</dt><dd><ul class="simple">
-<li><p><cite>criar_conexao()</cite>: Para estabelecer a conexão com a base de dados.</p></li>
-<li><p><cite>fechar_conexao()</cite>: Para encerrar a conexão com a base de dados.</p></li>
-</ul>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of tuple</p>
 </dd>
 </dl>
 </dd></dl>
@@ -218,16 +221,14 @@ Campos que não forem fornecidos serão ignorados no filtro.</p>
 <dt class="sig sig-object py" id="Model.Funcionarios.listar_funcionarios">
 <span class="sig-prename descclassname"><span class="pre">Model.Funcionarios.</span></span><span class="sig-name descname"><span class="pre">listar_funcionarios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Model.Funcionarios.listar_funcionarios" title="Link to this definition"></a></dt>
 <dd><p>Lista todos os funcionários da base de dados.</p>
-<p>A função executa uma consulta SQL para obter todos os registros da tabela de funcionários
-e exibe os resultados formatados em uma tabela.</p>
-<dl class="simple">
-<dt>Dependências:</dt><dd><ul class="simple">
-<li><p><cite>criar_conexao()</cite>: Para estabelecer a conexão com a base de dados.</p></li>
-<li><p><cite>executar_query()</cite>: Para executar a consulta SQL.</p></li>
-<li><p><cite>exibir_tabela()</cite>: Para formatar e exibir os resultados.</p></li>
-</ul>
+<p>Esta função consulta todos os registros na tabela <cite>funcionarios</cite> e exibe os resultados
+formatados em uma tabela.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sqlite3.Error</strong> – Se ocorrer um erro durante a consulta ao banco de dados.</p>
 </dd>
-<dt>Retorna:</dt><dd><p>None: Os dados são exibidos no terminal.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

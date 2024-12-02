@@ -126,29 +126,24 @@ Data: [01/12/2024]</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="Controller.menu_funcionarios.gerenciar_funcionarios">
 <span class="sig-prename descclassname"><span class="pre">Controller.menu_funcionarios.</span></span><span class="sig-name descname"><span class="pre">gerenciar_funcionarios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.menu_funcionarios.gerenciar_funcionarios" title="Link to this definition"></a></dt>
-<dd><p>Interface de gerenciamento de funcionários.</p>
-<p>Este método exibe um menu interativo para que o usuário realize operações sobre os dados de funcionários.
-As opções incluem adicionar, listar, atualizar, deletar e filtrar funcionários.</p>
-<p>O programa solicita entradas do usuário, valida as informações e utiliza funções de outros módulos para
-manipular os dados armazenados na base de dados.</p>
+<dd><p>Exibe o menu interativo para gerenciamento de funcionários.</p>
+<p>Este método apresenta opções para realizar operações relacionadas aos funcionários,
+incluindo adicionar, listar, atualizar, deletar e filtrar registros.</p>
 <section id="fluxo-de-execucao">
 <h2>Fluxo de execução:<a class="headerlink" href="#fluxo-de-execucao" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>O usuário escolhe uma opção do menu.</p></li>
-<li><p>O programa chama a função correspondente.</p></li>
-<li><p>O menu é exibido novamente até que o usuário escolha sair.</p></li>
+<li><p>O usuário escolhe uma opção exibida no menu.</p></li>
+<li><p>A função correspondente é executada.</p></li>
+<li><p>O menu é exibido novamente até que o usuário escolha retornar ao menu principal.</p></li>
 </ol>
-</section>
-<section id="excecoes-tratadas">
-<h2>Exceções tratadas:<a class="headerlink" href="#excecoes-tratadas" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Verificação de existência de funcionários para operações de atualização e deleção.</p></li>
-<li><p>Campos deixados em branco são ignorados nas atualizações e filtragens.</p></li>
-</ul>
-</section>
-<section id="retorno">
-<h2>Retorno:<a class="headerlink" href="#retorno" title="Link to this heading"></a></h2>
-<p>Nenhum. O resultado das operações é exibido diretamente no terminal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">raises Exception<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tratamento de erros relacionados às operações de funcionários.</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </section>
 </dd></dl>
 
