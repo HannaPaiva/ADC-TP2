@@ -1,7 +1,7 @@
 leitor module
 =============
 
-.. automodule:: Controller.leitor
+.. automodule:: Model.leitor
    :members:
    :undoc-members:
    :show-inheritance:

@@ -18,7 +18,9 @@
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="menu_leitor module" href="menu_leitor.html" />
+    <link rel="prev" title="menu_emprestimos module" href="menu_emprestimos.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,14 +42,34 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">menu_funcionarios module</a><ul>
-<li><a class="reference internal" href="#menu_funcionarios.gerenciar_funcionarios"><code class="docutils literal notranslate"><span class="pre">gerenciar_funcionarios()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bd_connector.html">bd_connector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Menus:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="menu_emprestimos.html">menu_emprestimos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">menu_funcionarios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modulo-de-gerenciamento-de-funcionarios-menu">Módulo de Gerenciamento de Funcionários (Menu)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#funcionalidades-principais">Funcionalidades principais:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependencias">Dependências:</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#Controller.menu_funcionarios.gerenciar_funcionarios"><code class="docutils literal notranslate"><span class="pre">gerenciar_funcionarios()</span></code></a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="menu_leitor.html">menu_leitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu_livro.html">menu_livro</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Componentes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="emprestimos.html">Emprestimos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leitor.html">Leitores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="livros.html">Livros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Funcionarios.html">Funcionários</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -72,19 +94,73 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-menu_funcionarios">
-<span id="menu-funcionarios-module"></span><h1>menu_funcionarios module<a class="headerlink" href="#module-menu_funcionarios" title="Link to this heading"></a></h1>
+  <section id="module-Controller.menu_funcionarios">
+<span id="menu-funcionarios-module"></span><h1>menu_funcionarios module<a class="headerlink" href="#module-Controller.menu_funcionarios" title="Link to this heading"></a></h1>
+<section id="modulo-de-gerenciamento-de-funcionarios-menu">
+<h2>Módulo de Gerenciamento de Funcionários (Menu)<a class="headerlink" href="#modulo-de-gerenciamento-de-funcionarios-menu" title="Link to this heading"></a></h2>
+<p>Este módulo fornece um menu interativo para gerenciar funcionários,
+permitindo operações de CRUD (Criar, Ler, Atualizar, Deletar) e filtragem.</p>
+<section id="funcionalidades-principais">
+<h3>Funcionalidades principais:<a class="headerlink" href="#funcionalidades-principais" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Adicionar novo funcionário.</p></li>
+<li><p>Listar todos os funcionários.</p></li>
+<li><p>Atualizar informações de um funcionário existente.</p></li>
+<li><p>Remover um funcionário.</p></li>
+<li><p>Filtrar funcionários com base em critérios específicos.</p></li>
+<li><p>Sair para o menu principal.</p></li>
+</ol>
+</section>
+<section id="dependencias">
+<h3>Dependências:<a class="headerlink" href="#dependencias" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Funções CRUD e de filtragem do módulo <cite>Model.Funcionarios</cite>.</p></li>
+<li><p>Entrada de dados validada pelo módulo <cite>FilterData.filterInput</cite>.</p></li>
+<li><p>Validação de funcionários do módulo <cite>Model.emprestimos</cite>.</p></li>
+<li><p>Formatação de saída com <cite>FilterData.filterOutput</cite>.</p></li>
+</ul>
+<p>Autor: [Adriano]
+Data: [01/12/2024]</p>
+</section>
+</section>
 <dl class="py function">
-<dt class="sig sig-object py" id="menu_funcionarios.gerenciar_funcionarios">
-<span class="sig-prename descclassname"><span class="pre">menu_funcionarios.</span></span><span class="sig-name descname"><span class="pre">gerenciar_funcionarios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#menu_funcionarios.gerenciar_funcionarios" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="Controller.menu_funcionarios.gerenciar_funcionarios">
+<span class="sig-prename descclassname"><span class="pre">Controller.menu_funcionarios.</span></span><span class="sig-name descname"><span class="pre">gerenciar_funcionarios</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.menu_funcionarios.gerenciar_funcionarios" title="Link to this definition"></a></dt>
+<dd><p>Interface de gerenciamento de funcionários.</p>
+<p>Este método exibe um menu interativo para que o usuário realize operações sobre os dados de funcionários.
+As opções incluem adicionar, listar, atualizar, deletar e filtrar funcionários.</p>
+<p>O programa solicita entradas do usuário, valida as informações e utiliza funções de outros módulos para
+manipular os dados armazenados na base de dados.</p>
+<section id="fluxo-de-execucao">
+<h2>Fluxo de execução:<a class="headerlink" href="#fluxo-de-execucao" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>O usuário escolhe uma opção do menu.</p></li>
+<li><p>O programa chama a função correspondente.</p></li>
+<li><p>O menu é exibido novamente até que o usuário escolha sair.</p></li>
+</ol>
+</section>
+<section id="excecoes-tratadas">
+<h2>Exceções tratadas:<a class="headerlink" href="#excecoes-tratadas" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Verificação de existência de funcionários para operações de atualização e deleção.</p></li>
+<li><p>Campos deixados em branco são ignorados nas atualizações e filtragens.</p></li>
+</ul>
+</section>
+<section id="retorno">
+<h2>Retorno:<a class="headerlink" href="#retorno" title="Link to this heading"></a></h2>
+<p>Nenhum. O resultado das operações é exibido diretamente no terminal.</p>
+</section>
+</dd></dl>
 
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="menu_emprestimos.html" class="btn btn-neutral float-left" title="menu_emprestimos module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="menu_leitor.html" class="btn btn-neutral float-right" title="menu_leitor module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
